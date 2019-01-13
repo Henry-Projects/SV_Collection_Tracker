@@ -10,8 +10,8 @@ public class HelloServlet3 extends GenericServlet {
             throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter pw = response.getWriter();
-        pw.println("<B>Hello! Intellij");
+        pw.println("<B>Hello! Intellij 9");
         pw.close();
-        System.out.println("hi");
+        System.out.println("hi3");
     }
 }
