@@ -14,10 +14,10 @@ public enum Rarity {
         create_value = b;
     }
 
-    int getLiquefy_value() {
+    public int getLiquefy_value() {
         return liquefy_value;
     }
-    int getCreate_value() {
+    public int getCreate_value() {
         return create_value;
     }
 
