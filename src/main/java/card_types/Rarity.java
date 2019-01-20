@@ -1,4 +1,4 @@
-package cardtype;
+package card_types;
 
 
 public enum Rarity {
