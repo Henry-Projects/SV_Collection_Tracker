@@ -1,0 +1,1809 @@
+Fairy Wisp|90000|1
+Mark of the Unkilling|10010|2
+Blessings of Creation|90000|4
+Wrath of Nature|90000|4
+Evyn, Novice Agent|90000|3
+Veiled Reckoning|90000|3
+Fran's Attendant|90000|2
+Fran's Curse|90000|2
+Gift for Bloodkin|10008|3
+Restless Parish|10009|2
+Puppet|90000|1
+Biofabrication|10007|3
+Mechanization|10010|2
+Goblin|10000|1
+Wise Merman|10004|1
+Steadfast Angel|10010|1
+Angelic Snipe|10001|2
+Mystic Ring|10006|2
+Treasure Map|10007|2
+Ruthful Droplet|90000|3
+Nourishing Fare|90000|3
+Flaming-Hot Fare|90000|3
+Infernal Gaze|90000|4
+Infernal Surge|90000|4
+Fount of Angels|10008|1
+Water Fairy|10000|1
+Elf Child May|10001|1
+Fairy Champion|10001|1
+Felpurr Kitten|10003|1
+Tia, Crystalian Noble|10010|4
+Lila, Arborist|10011|1
+Fairy|90000|1
+Nature's Guidance|10001|1
+Fairy Circle|10001|1
+Fairy Circle|10010|1
+Entangling Vines|10003|1
+Airbound Barrage|10006|1
+Airbound Barrage|70004|1
+Fairy Torrent|10007|3
+Angel's Dress|90000|2
+Demon's Dress|90000|2
+Fil|90000|4
+Carbuncle's Sparkle|90000|4
+Woodland Refuge|10001|2
+Spring-Green Protection|10006|3
+Firesprite Grove|10007|1
+Fairy Refuge|10009|1
+Fairy's Yawn|90000|1
+Fairy's Awakening|90000|1
+Quickblader|10000|1
+Ta-G, Katana Unsheathed|70003|1
+Ninja Trainee|10001|1
+Vanguard|10001|1
+Perseus|10006|3
+Wolf Fang Swordsman|10007|1
+Axe Princess|10008|1
+Sellsword Lucius|10009|2
+Rapier Master|10010|3
+Knight|90000|1
+Heavy Knight|90000|1
+Shield Guardian|90000|1
+Otohime's Bodyguard|90000|4
+Mentor's Teachings|10002|1
+Accolade|10007|2
+Chromatic Duel|10008|3
+Grand Auction|10009|1
+Gilded Blade|90000|1
+Gilded Goblet|90000|1
+Gilded Boots|90000|1
+Gilded Necklace|90000|1
+Fatal Spellbomb|90000|2
+Front Lines|10001|3
+Spring Cleaning|10004|1
+Snowman|90000|1
+Scrap Golem|90000|1
+Flame Rat|90000|1
+Bunnicorn Nic-nic|90000|1
+Insight|10000|1
+Insight|70005|1
+Commence Experiment|10001|2
+Mysterian Knowledge|10007|2
+Crimson Sorcery|90000|1
+Grea's Ember|90000|3
+Splendid Conjury|90000|3
+Scrap Iron Smelter|10002|1
+Scrap Iron Smelter|10010|1
+Witch's Cauldron|10005|1
+Starseer's Telescope|10006|1
+Mystic Rune|10009|3
+Earth Essence|90000|1
+Ivory Dragon|10001|1
+Giselle, Mermaid Healer|10010|2
+Disciple of Disdain|10010|2
+Fire Drake Whelp|90000|1
+Otohime's Vanguard|90000|4
+Blazing Breath|10000|1
+Stormborne Wings|10007|1
+Dragon Horde|10007|2
+Disdainful Rending|10010|3
+Dragoon's Command|90000|3
+Dragon's Nest|10004|1
+Skull Beast|10001|1
+Skeleton Fighter|10001|2
+Deadmoon Disciple|10004|1
+Mischievous Spirit|10008|1
+Gremory|10009|4
+Skeleton|90000|1
+Ghost|90000|1
+Mimi, Right Paw Hellhound|90000|4
+Coco, Left Paw Hellhound|90000|4
+Soul Conversion|10001|1
+Soul Conversion|10009|1
+Ghostly Grasp|10003|2
+Grave Invitation|10007|2
+Silent Purge|10010|1
+Sonata of Silence|10011|3
+Descent into Madness|90000|3
+Mimi|90000|4
+Coco|90000|4
+Instant Potion|90000|4
+Burial Grounds|10001|2
+Ghouls' Banquet|10001|3
+Haunted House|10005|1
+Ambling Wraith|10001|1
+Cursebrand Vampire|10001|2
+Buller, Blood Maiden|10008|2
+Disciple of Lust|10010|2
+Forest Bat|90000|1
+Serpent|90000|1
+Precious Bloodfangs|10002|2
+Executioner's Axe|10003|1
+Furtive Fangs|10005|2
+Red Talonstrike|10008|2
+Kiss of Lust|10011|2
+Bloodfed Flowerbed|10001|2
+Father Punishment|10009|2
+Petra, Ether of the Wind|10009|3
+Temple Windbear|10011|1
+Lorena's Holy Water|90000|3
+Mark of Balance|90000|3
+Summon Pegasus|10000|1
+Pinion Prayer|10001|1
+Sacred Plea|10001|1
+Hare of Illusions|10001|3
+Globe of the Starways|10006|3
+Featherfall Hourglass|10007|1
+Summit Temple|10007|3
+Sealed Tome|10009|1
+White Diamond|90000|3
+Black Diamond|90000|3
+Inspired Inventor|10010|2
+Ancient Artifact|90000|1
+Analyzing Artifact|90000|1
+Spinaria's Artifact|90000|4
+Marionette//Uno|90000|4
+Metaproduction|10007|2
+Joy of Destruction|10011|1
+Blade of Light|90000|3
+Blade of Dark|90000|3
+Acceleratium|10007|1
+Ancient Amplifier|10007|2
+Nilpotent Entity|10007|3
+Ancient Apparatus|10009|1
+Artifact Squadron|90000|1
+Artifact's Glow|90000|1
+Hazardous Invention|90000|2
+Fighter|10000|1
+Minotaur|10001|1
+Bellringer Angel|10001|2
+Unicorn Dancer Unica|10002|2
+Demonic Simulacrum|10002|3
+Sektor|10003|1
+Hamsa|10003|1
+Lyrial, Celestial Archer|10003|2
+Owlcat|10004|1
+Wandering Bard Elta|10004|2
+Actress Feria|10005|2
+Evelisia the Fallen|10006|2
+Happy Pig|10007|1
+Tart Man|10008|1
+Valkyrie of Order|10008|2
+Paradise Vanguard|10008|3
+Lyria, Azure Maiden|10009|3
+Legendary Fighter|10009|4
+Goblin Fighter|10010|1
+Reize, Spice Cherub|10011|1
+Ephemera, Sword Angel|10011|3
+Ultimate Carrot|90000|2
+Wrathful Icefiend|90000|4
+Keen Enchantment|10001|1
+Trail of Light|10001|2
+Altered Fate|10001|3
+Into the Looking Glass|10005|2
+Investigation|10009|1
+Seraphic Blade|10009|3
+Heavenfall|90000|4
+Well of Destiny|10000|1
+Valkyrie's Spear|10003|1
+Staircase to Paradise|10006|3
+Genesis of Legend|10009|2
+Fairy Whisperer|10000|1
+Elf Guard|10000|1
+Elf Metallurgist|10000|2
+Dungeoncrawl Fairy|10001|1
+Fairy Bringer|10001|1
+Wandering Elf Mage|10001|1
+Elf Wanderer|10001|1
+Blessed Fairy Dancer|10001|2
+Rhinoceroach|10001|3
+Dwarf Perfumer|10002|1
+Elf Bard|10002|1
+Elf Girl Liza|10002|3
+Crystalia Lily|10003|2
+Dryad|10004|1
+Sukuna, Brave and Small|10004|2
+Tweedle Dum, Tweedle Dee|10005|1
+Abby the Axe Girl|10005|2
+Fairy Dragon|10005|4
+Fita the Gentle Elf|10006|1
+Elf Singer Harmony|10006|2
+Leaf Man|10007|1
+Furious Elder Weedman|10007|2
+Rayne, Elf Smith|10007|3
+Insect Lord|10007|4
+Servant of the Spellgrove|10008|1
+Paula, Icy Warmth|10008|3
+Storied Falconer|10008|3
+Devil Flower|10009|1
+Utopian Fairy|10009|1
+Servant of Unkilling|10010|1
+Lily, Crystalian Conductor|10010|3
+Zealot of Unkilling|10011|1
+Michelle, the Mind Reader|10011|2
+Hornet Warrior|90000|2
+Paula, Gentle Warmth|90000|3
+Paula, Passionate Warmth|90000|3
+Sylvan Justice|10000|1
+Sylvan Justice|70005|1
+Pixie Mischief|10001|1
+Woodkin Curse|10001|1
+Glimmering Wings|10002|1
+Elf Twins' Assault|10005|3
+Elf Song|10006|2
+Predatory Might|10011|2
+Shamu's Antics|90000|3
+Shama's Gaze|90000|3
+Righteous Evocation|90000|3
+Thorn Burst|90000|4
+Forest of Dreams|10001|1
+Wood of Brambles|10005|2
+Flower of Fairies|10008|1
+Whispering Woods|10010|1
+Oathless Knight|10000|1
+Kunoichi Trainee|10000|1
+Fervid Soldier|10001|1
+Palace Fencer|10001|1
+Cyclone Soldier|10001|1
+Centaur Vanguard|10001|1
+Veteran Lancer|10001|1
+Maid Leader|10001|2
+Assassin|10001|2
+Luminous Knight|10001|2
+Princess Vanguard|10001|2
+Fearless Banneret|10002|1
+Gunner Maid Seria|10002|2
+Samurai|10003|1
+Gelt, Vice Captain|10003|2
+Naval Guard Simone|10004|1
+Bladed Hedgehog|10005|2
+Maisy, Red Riding Hood|10005|3
+Cuhullin|10006|2
+Lancer|70004|2
+Lux, Solar Lancer|10006|3
+Homebound Mercenary|10007|2
+Noble Chancellor|10007|3
+Holy Bear Knight|10008|1
+Savage Swordsman|10008|2
+Innocent Princess Prim|10008|3
+Dario, Demon Count|10008|3
+Sky Commander Celia|10008|4
+Tycoon|10009|1
+Servant of Usurpation|10010|1
+Ernesta, Magic Dealer|10011|1
+Leod, the Crescent Blade|10011|3
+Steelclad Knight|90000|1
+Unbridled Fury|10000|1
+Unbridled Fury|70005|1
+Conscription|10001|2
+Whole-Souled Swing|10002|2
+Shield of Flame|10005|2
+Armor of the Stars|10006|2
+Usurping Spineblade|10010|1
+Godsent Stride|10011|1
+Frostwing Spear|90000|2
+Infiltration|90000|3
+Ironwrought Fortress|10001|2
+Ageworn Weaponry|10009|2
+Greatshield|90000|2
+Greatsword|90000|2
+Sammy, Wizard's Apprentice|10000|1
+Penguin Wizard|10001|1
+Crafty Warlock|10001|1
+Apprentice Alchemist|10001|1
+Scholarly Witch|10001|2
+Timeworn Mage Levi|10002|3
+Craig, Wizard of Mysteria|10003|1
+Dwarf Alchemist|10003|2
+Freshman Lou|10004|2
+Magic Illusionist|10004|2
+Witch of Sweets|10005|1
+Carbuncle of Mysteria|10005|1
+Magic Owl|10006|1
+Star Reader Stella|10006|4
+Mr. Bertrand, Magic Mentor|10007|1
+Witch of Foresight|10008|1
+Beastfaced Mage|10008|1
+Mysterian Wyrmist|10008|2
+Black Witch Anna|10009|1
+Owen, Knight of Mysteria|10010|1
+Apostle of Truth|10010|3
+Rabbit Mage|10011|1
+Clay Golem|90000|1
+Snow Knight|90000|3
+Wild Snowman|90000|3
+Onion Patch|90000|3
+Anne's Summoning|90000|3
+Magic Missile|10000|1
+Conjure Golem|10000|1
+Wind Blast|10000|1
+Kaleidoscopic Glow|10001|1
+Golem Assault|10005|3
+Chain of Calling|10006|3
+Grand Spire|10009|1
+Witch Snap|10011|1
+Conjure Guardian|90000|1
+Veridic Ritual|90000|1
+Mysterian Missile|90000|1
+Mysterian Circle|90000|1
+Ars Magna|90000|3
+Prophecy of Boons|90000|4
+Teachings of Creation|10001|1
+Red-Hot Ritual|10002|1
+Enchanted Library|10004|1
+Silent Laboratory|10007|2
+Dragonrider|10000|1
+Maelstrom Dragon|10001|1
+Sandstorm Dragon|10001|1
+Fire Lizard|10001|1
+Dragonewt Scholar|10001|3
+Shapeshifting Mage|10001|3
+Mushussu|10002|1
+Wildfang Dragonewt|10002|1
+Dragontamer|10003|1
+Luxfang Kit|10003|1
+Date Masamune|10003|3
+Dragon Summoner|10005|1
+Dragonrearer Matilda|10006|1
+Marion, Fierce Dragonewt|10007|2
+Aiela, Dragon Sword|10007|3
+Somniferous Whitewyrm|10008|1
+Heroic Dragonslayer|10008|2
+Whitefrost Dragonewt Filene|10008|4
+Dragon Huntress|10009|1
+Hatchling|10009|2
+Servant of Disdain|10010|1
+Masamune, Raging Dragon|10010|4
+Zealot of Disdain|10011|1
+Megalorca|90000|1
+Poseidon's Guard|90000|3
+Hellflame Dragon|90000|4
+Dragon Oracle|10000|1
+Dragon Oracle|70005|1
+Dragon Wings|10001|1
+Wild Hunt|10001|1
+Dragon Emissary|10001|2
+Dragonewt Fist|10002|2
+Breath of the Salamander|10003|3
+Dragon's Foresight|10006|1
+Waters of the Orca|10008|2
+Sneer of Disdain|10011|1
+Powerforge|10011|3
+White Breath|90000|2
+Dragonlife Blade|90000|3
+Dragonstrife Blade|90000|3
+Dragoon's Meditation|90000|3
+Whitefrost Whisper|90000|4
+Golden Dragon's Den|10001|2
+Spartoi Sergeant|10000|1
+Spectre|10000|1
+Skeleton Viper|10001|1
+Skullcradle Widow|10001|1
+Wight|10001|1
+Lesser Mummy|10001|1
+Deadly Widow|10001|2
+Dark Conjurer|10002|1
+Ghosthound Sexton|10003|1
+Lurching Corpse|10003|2
+Little Soulsquasher|10004|3
+Demon Eater|10005|1
+Skeleton Ogre|10005|1
+Usher of Styx|10005|2
+Belenus|10006|1
+Andrealphus|10006|3
+Gloomy Necromancer|10007|1
+Bone Bug|10007|1
+Orator of the Bones|10008|1
+Lord Deathskull|10008|3
+Sarunan, Cursebound Lover|10009|1
+Lady Grey, Deathweaver|10009|2
+Danua, Grim Puppetmaster|10009|3
+Ferry, Spirit Maiden|10009|4
+Servant of Silence|10010|1
+Buffalo Bones|10011|1
+Wight Knight|10011|2
+Nicola, Forbidden Strength|10011|3
+Zombie|90000|1
+Undying Resentment|10000|1
+Undying Resentment|70005|1
+Highway to Hell|10001|1
+Ethereal Form|10001|2
+Rise of the Dead|10002|2
+Zombie Party|10004|1
+Poisoned Apple of Rebirth|10005|3
+Troth's Curse|10006|2
+Regenerate Spirit|10008|1
+Manifest Malice|10011|1
+Grave Desecration|10004|2
+Siren's Tears|10005|2
+Gloaming Tombs|10006|1
+Golden Casket |10009|1
+Nightmare|10000|1
+Sweetfang Vampire|10000|1
+Lilith|10001|1
+Venomous Cobra|10001|1
+Rain Devil|10001|1
+Blood Wolf|10001|1
+Mormo|10001|2
+Dark Summoner|10001|2
+Demonic Hedonist|10002|1
+Serpent Charmer|10002|1
+Vania, Vampire Princess|10002|3
+Yurius, Levin Duke|10003|1
+Spiderweb Imp|10004|1
+Baphomet|10004|2
+Galretto, Devil of Love|10004|3
+Tove|10005|1
+Boy Who Cried Wolf|10005|2
+Scorpius|10006|1
+Demonic Ram|10006|2
+Glassbrand Demon|10007|1
+Cursed Scarecrow|10007|1
+Silverchain Disciple|10008|2
+Raven, Eventide Vampire|10008|3
+Bewitching Succubus|10009|1
+Alexandrite Demon|10009|2
+Vira, Knight Fanatic |10009|4
+Bloodthirsty Hamster|10010|1
+Servant of Lust|10010|1
+Devil Raider|10011|1
+Vuella, One-Winged Demon|10011|3
+Raven, Noontide Vampire|90000|3
+Raven, Midnight Vampire|90000|3
+Aza & Iza, Feline Maids|90000|3
+Blood Pact|10000|1
+Razory Claw|10000|1
+Razory Claw|70005|1
+Limil's Way|10001|1
+Summon Bloodkin|10001|1
+Summon Bloodkin|10008|1
+Vampiric Kiss|10002|1
+Medusa's Gaze|10002|2
+Hungering Horde|10003|2
+Snarling Chains|10006|2
+Snarling Chains|70004|2
+Wings of Lust|10010|2
+Crimson Burst|90000|4
+Vampiric Fortress|10002|3
+Mask of the Black Death|10004|2
+Night Fall|90000|2
+Madness Revealed|90000|2
+Blazing Sapphire|90000|2
+Snake Priestess|10000|1
+Rabbit Healer|10001|1
+Ardent Nun|10001|1
+Mainyu|10001|1
+Protectoress|10001|2
+Heavenly Hound|10002|1
+Frog Cleric|10003|1
+Luxwing Reno|10003|2
+Mist Shaman|10004|1
+Holy Bowman Kel|10004|2
+Naoise, Red Branch Knight|10005|3
+Princess Snow White|10005|4
+Star Bishop|10006|1
+Andromeda|10006|3
+Sister of the Sword|10007|1
+Deathscythe Nun|10008|1
+Jeweled Priestess|10008|3
+Hazen, Priest of the Wind|10009|1
+Holy Priest Lorena|10009|3
+Sister Falconer|10010|1
+Unicorn Knight|10010|2
+Disciple of Repose|10010|2
+Malevolent Al-mi'raj|10011|1
+Colette, Holy Gunner|10011|2
+Holy Shield Lion|90000|1
+Holy Cavalier|90000|4
+Hallowed Dogma|10000|1
+Hallowed Dogma|70005|1
+Blackened Scripture|10000|1
+Love's Gospel|10001|3
+Monastic Holy Water|10002|1
+Holy Lion Crystal|10008|1
+Lorena's Iron Fist|90000|3
+Beastly Vow|10000|1
+Heretical Inquiry|10001|1
+Guardian Sun|10001|2
+Noble Fangs|10001|2
+Holy Sentinel|10001|3
+Devourer of Heavens|10001|3
+Godsteel Wings|10002|1
+Beastcall Aria|10002|2
+Temple of the Inquisition|10005|1
+Alice's Adventure|10005|3
+Red-Hot Boots|10006|1
+Gemstone Carapace|10007|1
+Godscale's Banquet|10007|2
+Moriae Encomium|10008|1
+Temple of the Holy Lion|10008|2
+Realm of Repose|10010|1
+City of Gold|10010|3
+Sacred Teachings|90000|1
+Forbidden Teachings|90000|1
+Puppeteer|10000|1
+Mechanized Servant|10000|1
+Magisteel Lion|10000|1
+Magisteel Puppet|10000|2
+Bear Puppeteer|10007|1
+Hamelin|10007|1
+Mech Wing Swordsman|10007|1
+Demon's Epitaph|10007|1
+Rosa, Mech Wing Maiden|10007|2
+Flower Doll|10007|2
+Icarus|10007|2
+Machine Artisan, Geno|10007|2
+Knower of History|10008|1
+Miriam, Synthetic Being|10008|2
+Ancient War Machine|10009|1
+Paracelsus|10009|3
+Lococo, Little Puppeteer|10009|4
+Hydro Alchemist|10010|1
+Disciple of Destruction|10010|2
+Rukina of the Resistance|10010|3
+Marionette Lad|10011|2
+L'Ange Miriam|90000|2
+La Diablotine Miriam|90000|2
+Guardform Golem|90000|3
+Strikeform Golem|90000|3
+Camieux, Gunpowder Gal|90000|3
+Lococo's Teddy Bear|90000|4
+Dimension Cut|10000|1
+Dimension Cut|70005|1
+Rocket Knuckles|10008|1
+Windup|10010|1
+Miraculous Invention|90000|2
+Mercenary Drifter|10000|1
+Harnessed Flame|10000|3
+Harnessed Glass|10000|3
+Shield Angel|10001|1
+Healing Angel|10001|1
+Lizardman|10001|2
+Goblin Mage|10003|1
+Angel of the Word|10003|1
+Gourmet Emperor Khaiza|10003|2
+Axe Fighter|10004|1
+Grimnir, War Cyclone|10004|3
+Angelic Knight|10005|1
+Rapunzel|10005|3
+Nyx|10006|1
+Purehearted Singer|10006|2
+Dungeon Explorer Chloe|10007|1
+Burly Axewielder|10007|1
+Goblinmount Ogre|10007|2
+Goblin Emperor|10007|3
+Badb Catha|10007|4
+Valkyrie of Chaos|10008|1
+Lowain of the Brofamily|10009|1
+Khaiza, Radical Gourmand|10009|3
+Barkeep|10011|1
+Club Soldier|90000|1
+Heart Guardian|90000|1
+Spade Raider|90000|1
+Elsam of the Brofamily|90000|1
+Tomoi of the Brofamily|90000|1
+Fallen Angel|90000|3
+Amaterasu|90000|4
+Tsukuyomi|90000|4
+Vicious Commander|90000|4
+Cloud Chorus|10001|1
+Angelic Barrage|10001|2
+Surefire Bullet|10002|2
+Pitfall|10007|1
+Moon and Sun|10008|4
+Craving's Splendor|10010|2
+Ruthless Waterspout|90000|3
+Morrigna's Gospel|90000|4
+Test of Strength|10004|1
+Frozen Mammoth|10004|2
+Night's Way|10006|1
+Dark Elf Faure|10000|1
+Archer|10001|1
+Fen Sprite|10001|1
+Waltzing Fairy|10001|2
+Tam Lin|10001|2
+Carnivorous Flower|10001|2
+Ancient Elf|10001|4
+Ancient Elf|70001|4
+Elf Healer|10002|1
+Forest Spirit|10003|1
+Cybele|10004|1
+Beetle Warrior|10004|1
+Kindly Treant|10005|1
+Magical Fairy, Lilac|10005|3
+Starry Elf|10006|1
+Demon Child Zain|10006|3
+Adept Archer|10007|1
+Crimsonbow Elf|10007|2
+Grasshopper Conductor|10008|1
+Owl Man|10008|2
+Myconid|10009|1
+Shamu & Shama, Noblekin|10009|3
+Liza, Queen of the Forest|10010|4
+Insane Dark Elf|10011|1
+Skystride Raptor|90000|3
+Elemental Lance|10001|1
+Elven Archery|10002|2
+Swords to Woodlands|10003|2
+Selwyn's Command|10003|3
+Ivy Spellbomb|10004|1
+Instincts Unleashed|10007|2
+Hornet Sting|90000|2
+Pixie Paradise|10001|1
+Man-Eating Mangrove|10004|2
+Woodland Band|10005|1
+Ward of Unkilling|10011|1
+Ascetic Knight|10000|1
+Fencer|10001|1
+Novice Trooper|10001|1
+Snippy Gardener|10001|1
+Navy Lieutenant|10001|2
+Pompous Princess|10001|2
+Gemstaff Commander|10001|3
+Swift Infiltrator|10002|1
+Ruthless Assassin|10002|2
+White Paladin|10002|3
+Blitz Lancer|10003|1
+Thief|10003|1
+Captain Lecia|10004|3
+Rabbit Ear Attendant|10005|1
+Young Ogrehunter Momo|10005|2
+Old Man and Old Woman|10005|2
+Cinderella|10005|4
+Flail Knight|10006|1
+Princess Juliet|10006|2
+Lord General Romeo|10006|2
+Mars, Silent Flame General|10006|4
+Merchantette|10007|1
+Lancer of the Tempest|10007|3
+Master Samurai|10008|1
+Nonja, Silent Maid|10008|2
+Valse, Magical Marksman|10008|2
+Tanya, Shadow Enforcer|10009|1
+Charlotta, Tiny Justice|10009|2
+Weathered Vanguard|10010|1
+High-Seas Hero|10010|2
+Disciple of Usurpation|10010|2
+Octrice, Omen of Usurpation|10010|4
+Wardog|10011|1
+Ilmisuna, Arms Dealer|10011|2
+Aether of the Warrior Wing|10011|4
+Pirate|90000|1
+Viking|90000|1
+Fortress Guard|90000|1
+Forge Weaponry|10000|1
+Giant Slayer|10001|1
+Art of the Ninja|10003|1
+Kiss of the Princess|10005|1
+Assassination Jutsu|10007|1
+Rogue's Creed|10002|3
+Castle in the Sky|10003|3
+Luminous Standard|10004|2
+Runic Guardian|10001|1
+Gauntleted Healer|10001|1
+Spectral Wizard|10001|2
+Witchette Emmylou|10002|1
+Clarke, Arcane Scholar|10003|2
+Dazzling Healer|10004|1
+Mage of Nightfall|10004|1
+Mysterian Grimoire|10005|2
+Abomination Awakened|10005|4
+Magic Gun Hunter|10006|2
+Karl, Pious Instructor|10006|2
+Europa|10006|3
+Mysterian Summoner Vayle|10007|1
+Elusa, Magic Wunderkind|10008|2
+Clarisse, Unpolished Mage|10009|2
+Disciple of Truth|10010|2
+Grea, Mysterian Dragoness|10010|3
+Tico, Mysterian Spellnerd|10011|1
+Eleanor, Cosmic Flower|10011|3
+Slumbering Calamity|10011|4
+Ice Golem|90000|1
+Summon Snow|10000|1
+Sorcery Cache|10001|2
+Petrification|10001|2
+First Curse|10001|3
+Witchbolt|10002|1
+Summon Iceform|10002|2
+Rite of Exorcism|10003|1
+Secrets of Erasmus|10003|3
+Concentration|10006|2
+Concentration|70004|2
+Absolute Zeroblade|10008|3
+Astral Divination|10010|1
+Sleep Incantation|10010|2
+Veridic Discovery|10011|2
+Grea's Inferno|90000|3
+Elementary Alchemy|10001|1
+Price of Magic|10001|2
+Gingerbread House|10005|2
+Firstborn Dragon|10000|1
+Aiela, Dragon Knight|10001|1
+Twin-Headed Dragon|10001|1
+Roc|10001|1
+Trinity Dragon|10001|1
+Dragonewt Princess|10001|2
+Sky Dragon Ethica|10001|2
+Imprisoned Dragon|10001|2
+Ace Dragoon|10001|2
+Ironscale Dragonfolk|10002|1
+Griffon Knight|10003|1
+Eyfa, Wyvern Rider|10003|2
+Aqua Nereid|10004|1
+Dragoon Scyther|10004|1
+Master of Draconic Arts|10005|2
+Dramatic Dragonblader|10005|3
+Red Ragewyrm|10005|3
+Estrella Beast|10006|1
+Beowulf|10006|2
+Star Phoenix|10006|3
+Dragon Aficionado|10007|1
+Dragonclad Blademaster|10008|1
+Dragoncleaver Roy|10008|3
+Venomtail Salamander|10009|1
+Aliza, Pugilist Princess|10009|2
+Serpent Drake|10010|1
+Righteous Dragoon|10011|1
+Dragonsoul Princess|10011|2
+Basilisk|90000|1
+Dragon Cry|10001|1
+Avowed Strike|10006|3
+Avowed Strike|70004|3
+Force of the Dragonewt|10008|3
+Mesozoic Era|10010|1
+Dracomancer's Rites|10002|3
+Dragonsong Flute|10002|4
+Dragon Sanctum|10009|2
+Trample|90000|2
+Whirlwind|90000|2
+Apprentice Necromancer|10000|1
+Tenacious Ghost|10001|1
+Rabbit Necromancer|10001|1
+Skeleton Knight|10001|1
+Spartoi|10001|1
+Necroelementist|10001|2
+Goetia Mage|10001|2
+Madame Lich|10001|3
+Deathchaser|10002|1
+Spartoi Soldier|10002|1
+Bone Chimera|10002|2
+Feathered Patroller|10003|1
+Attendant of Night|10003|1
+Zombie Buccaneer|10003|1
+Shadow Reaper|10003|3
+Goblin Zombie|10004|1
+Sora, Martial Artist|10006|2
+Soulcaller|10007|2
+Big Soul Hunter|10008|2
+Everdark Strix|10008|3
+Fran, Monster Girl|10009|2
+Fiendish Wraithknight|10009|3
+Disciple of Silence|10010|2
+Rulenye, Omen of Silence|10010|4
+Chris Pumpkinhead|10011|2
+Soul Hunt|10001|1
+Impious Resurrection|10001|1
+Foul Tempest|10001|3
+Deathbrand|10002|1
+Voices of Resentment|10003|1
+Pact with the Nethergod|10003|3
+Poltergeist|10008|2
+Spirit Cycle|10002|3
+Midnight Haunt|10002|3
+Crazed Executioner|10000|1
+Metal Gargoyle|10001|1
+Killer Devil|10001|1
+Demonhand Assassin|10001|1
+Demonic Sniper|10001|1
+Succubus|10001|1
+Devil of Vengeance|10001|2
+Midnight Vampire|10001|2
+Vampire Lykos|10001|2
+Masked Butcher|10001|2
+Demon Commander Laura|10001|3
+Mini Soul Devil|10002|1
+Alpha Wolfman|10003|1
+Veight, Vampire Noble|10003|2
+Frogbat|10004|1
+Disagreeable Demon|10005|1
+Fanged Serpent|10006|1
+Savage Wolf|10007|1
+Vassago|10007|2
+Pazuzu|10007|2
+Endearing Succubus Lilith|10007|3
+Nightmare Devil|10008|1
+Waltz, King of Wolves|10008|4
+Zehek, the Cursebranded|10009|1
+Girtablilu|10009|3
+Valnareik, Omen of Lust|10010|4
+Furfur|10011|1
+Blood Rage|10001|1
+Sadistic Night|10003|3
+Lethal Blade|10005|3
+Venomous Bite|10006|1
+Trial of the Gorgons|10006|3
+Blood Drinker's Brand|10007|1
+Crimson Desire|10009|1
+Relinquish Reason|10011|3
+Demon Song|90000|3
+Dire Bond|10001|3
+Blood Moon|10004|3
+Demon Key|10005|1
+Throne of Solitude|10010|1
+Sister Initiate|10001|1
+Dark Priest|10001|1
+Temple Defender|10001|2
+Prism Priestess|10001|2
+Radiant Shaman|10001|2
+Holy Mage|10001|2
+Sky Sprite|10002|1
+Sledgehammer Exorcist|10002|2
+Master Sage|10003|1
+Damus, Oracle of Iniquity|10003|2
+Zoe, Queen of Goldenia|10004|3
+White Tiger|10005|1
+Sister of Punishment|10006|1
+Aegina|10006|2
+Jeanne, Beacon of Salvation|10007|4
+Peaceweaver|10008|2
+Bashful Al-mi'raj|10009|1
+Sophia, Pious Pilgrim|10009|2
+Servant of Repose|10010|1
+Marlone, Light of Balance|10011|3
+Holy Falcon|90000|1
+White Snake|90000|1
+Time Owl|90000|1
+Power of Protection|10001|1
+Healing Prayer|10001|1
+Star Torrent|10006|2
+Prism Swing|10009|2
+Feather Rush|10010|2
+Unicorn Spear|90000|2
+Featherwyrm's Descent|10000|1
+Divine Birdsong|10001|1
+Forbidden Ritual|10002|2
+Elana's Prayer|10002|3
+Pegasus Sculpture|10003|2
+Candelabra of Prayers|10004|1
+Whitefang Temple|10008|3
+Toy Soldier|10000|1
+Automaton Knight|10000|1
+Cat Cannoneer|10007|1
+Steel Demolitionist|10007|1
+Iron Staff Mechanic|10007|1
+Cursed Stone|10007|1
+Fervent Machine Soldier|10007|2
+Junk|10008|1
+Devil of the Gaps|10008|3
+Jessica, Cheerful Cannoneer|10009|1
+Cucouroux, Green Gunsmith|10009|3
+Malocchio|10009|4
+Servant of Destruction|10010|1
+Viola, Duchess of Dolls |10011|1
+Angel of the Iron Steed|10011|2
+Mystic Artifact|90000|1
+Victoria|90000|3
+Lloyd the Android|90000|4
+Substitution|10007|2
+Tranquil Cog|10007|1
+Puppet Room|10007|1
+Go, Go, Robomi!|90000|2
+Goliath|10000|1
+Desert Rider|10001|1
+Urd|10001|3
+Humpty Dumpty|10002|2
+Uriel|10003|3
+Goblinbreaker Teena|10003|3
+Impartial Strix|10004|2
+Goblin Leader|10005|1
+Alice, Wonderland Explorer|10005|4
+Shining Bellringer Angel|10007|3
+Oceanus|10008|3
+Rackam, Airship Pilot|10009|1
+Feena, Dynamite Daredevil|10010|3
+Lyrial, Archer Throne|10010|3
+High Enchantress|10011|1
+Goblin King|90000|3
+Scion of Desire|90000|4
+Demonic Strike|10001|1
+Fall from Grace|10007|3
+Earthfall|90000|4
+Path to Purgatory|10001|3
+Fortune's Font|10011|2
+Okami|10000|1
+Rose Gardener|10000|2
+Elven Princess Mage|10001|2
+Mana Elk|10001|2
+Petal Fencer|10001|3
+Underbrush Beast Girl|10002|1
+Yuel the Ancient|10002|2
+Fairy Knight|10003|1
+Vist, Elf Butler|10004|2
+Flower Princess|10005|1
+Snowfield Warrior|10005|2
+Fairy Driver|10005|3
+Ariana, Natural Tutor|10006|2
+Weald Philosopher|10007|1
+Aria, Guiding Fairy|10007|4
+Aria, Guiding Fairy|10007|4
+Elf General|10008|1
+Fashionista Nelcha|10008|2
+Sutera of the Sacred Bow|10009|2
+Metera, Peerless Shot|10009|3
+Furious Mountain Deity|10010|1
+Disciple of Unkilling|10010|2
+Lycoris, Poisoner Princess|10011|3
+Carbuncle, Immortal Jewel|10011|4
+Crystalia Eve|90000|4
+Way of the Outlaw|10001|1
+Forest Whispers|10008|2
+Burst Shot|10009|3
+Harvest Festival|10001|2
+Fairy Cage|10004|3
+White General|10000|1
+Floral Fencer|10000|2
+Courageous Knight|10001|1
+Cursed General|10001|2
+Swordsman|10001|2
+Shadowed Assassin|10001|3
+Latham, Vanguard Captain|10001|3
+Mirage Defender|10002|1
+Jeno, Levin Vanguard|10003|2
+Amelia, Silver Paladin|10003|3
+Vagabond Frog|10004|1
+Shrouded Assassin|10004|2
+Gawain of the Round Table|10004|4
+Frontline Cavalier|10007|2
+Princess Teena|10009|1
+Dei, Secret Agent |10009|3
+Battlefield Beauty|10010|1
+Aloadae|10010|2
+Zealot of Usurpation|10011|1
+Queen Hemera the White|90000|3
+Queen Magnus the Black|90000|3
+Beatrix, Undying Blue|90000|4
+Rousing Step|10001|1
+Stratagem|10001|3
+Confront Adversity|10007|3
+Flarewing Spear|90000|2
+Royal Banner|10000|2
+Frontline Ramparts|10008|1
+Demonflame Mage|10000|2
+Crest Wizard|10001|1
+Veteran Alchemist|10001|1
+Queen Medb|10001|2
+Rune Blade Summoner|10001|2
+Merlin|10001|4
+Merlin|70001|4
+Crystal Bombarder|10002|1
+Remi & Rami, Witchy Duo|10002|2
+Timeless Witch|10003|1
+Halo Golem|10004|1
+Apprentice Swordmage|10005|1
+Lightning Lancer|10006|1
+Lorea, Dancer of the Sun|10006|2
+Joycrafter Sammy|10007|2
+Moonshade Mage|10008|1
+Runie, Destiny's Bard|10008|4
+Cagliostro, Adorable Genius|10009|3
+Vesper, Witchhunter|10009|4
+Palla, Student Teacher|10011|2
+Guardian Golem|90000|1
+Conjure Twosome|10000|1
+Fissure Bomb|10001|1
+Fire Chain|10001|3
+Piercing Rune|10003|2
+Nova Flare|10007|3
+Burgeoning Genius|10009|2
+Alchemist's Workshop|10001|1
+Summoning Drills|10008|2
+Death Dragon|10000|1
+Dragon Warrior|10000|2
+Glint Dragon|10001|1
+Grim Reaper|10001|2
+Leviathan|10001|2
+Deathmist Dragon|10001|3
+Siegfried|10002|2
+Noxious Dragon|10002|2
+Pyroxene Dragon|10003|2
+Wind Reader Zell|10004|2
+Rahab|10004|3
+Elder Tortoise|10005|1
+Prime Dragon Keeper|10006|4
+Basilisk Rider|10007|1
+Tower Warden Adelle|10007|2
+Pyrewyrm Commander|10009|3
+Draconic Sniper|10010|1
+Griffonback Guard|10010|2
+Apostle of Disdain|10010|3
+Pure-Voiced Dragoon|10010|3
+Geovore|10011|1
+Hastewing Dragonewt|10011|4
+Serpent Wrath|10000|1
+Serpent Force|10001|1
+Draconification|10001|2
+Dragon Counsel|10002|1
+Dragonslayer's Price|10004|3
+Dragonrend Quake|10007|3
+Dragon's Handspur|90000|1
+Black Breath|90000|2
+Dragon Sculpture|10005|1
+Elder Spartoi Soldier|10000|1
+Playful Necromancer|10000|2
+Hell's Unleasher|10000|2
+Guilty Courier|10001|1
+Skull Rider|10001|2
+Wight King|10001|3
+Phantom Dragon|10001|3
+Malicious Ghost|10002|1
+Necroassassin|10003|2
+Orthrus|10004|2
+Prince Catacomb|10004|2
+Minthe of the Underworld|10004|4
+Nightmare Executioner|10005|2
+Caterpillar of Riddles|10005|2
+Corpselord of Woe|10005|4
+Castor|10006|1
+Ceres of the Night|10006|3
+Twilight Queen|10006|4
+Mummy|10007|1
+Mighty Arm Skeleton|10008|2
+Stygian Warden|10009|2
+Sinister Sarcophagus|10010|1
+Orthrus, Junior Hellhound|10010|2
+Apostle of Silence|10010|3
+Osiris|10010|4
+Zealot of Silence|10011|1
+Zebet, Lady of the Flies|10011|4
+Lich|90000|1
+Spellplate Cavalier|90000|3
+Bone Cavalier|90000|3
+Velocious Beetle|90000|4
+Virulent Hornet|90000|4
+Vicious Scorpion|90000|4
+Vengeful Mantis|90000|4
+Veiled Shudderfly|90000|4
+Curse of Rebirth|10001|2
+Phantom Howl|10001|3
+Death's Ledger|10004|3
+Skull Ring|10007|1
+Dark General|10000|1
+Exella, Dark General|10000|1
+Wardrobe Raider|10000|2
+Raging Giant|10001|1
+Barbaric Demon|10001|1
+Geryon|10001|2
+Righteous Devil|10001|3
+Soul Dealer|10001|4
+Labyrinth Devil|10002|2
+Moriana the Bejeweled|10003|1
+Assault Werewolf|10004|1
+Belphegor|10004|4
+Belphegor|70002|4
+Euryale|10006|2
+Venomfang Medusa|10006|4
+Venomfang Medusa|10006|4
+Terror Demon|10007|3
+Devil Hand|10009|1
+Narmaya, Ephemeral Blade|10009|3
+Swordserpent Guardian|10010|1
+Dark Elemental|10010|2
+Flauros|10010|3
+Trill, Devilish Idol|10010|3
+Zealot of Lust|10011|1
+Crimson Purge|10000|1
+Night Horde|10001|2
+Devil Blade|10007|2
+Blazing Ruby|90000|2
+Priest of the Cudgel|10000|2
+Guardian Nun|10001|1
+Canoness|10001|1
+Cruel Priestess|10001|2
+Holy Fox Grimaud|10002|1
+Veteran Tamer|10003|1
+Pure Healer|10004|1
+Octobishop|10004|1
+Birdkeeping Disciple|10005|1
+Starchaser Sprite|10006|1
+Oathplume Warrior|10007|1
+Pegasus Dullahan|10007|3
+Apostle of Repose|10010|3
+Marwynn, Omen of Repose|10010|4
+Holy Lion of Salvation|10010|4
+Zealot of Repose|10011|1
+Holyflame Tiger|90000|1
+Dream Rabbit|90000|1
+Bejeweled Tortoise|90000|1
+Holy Fowl of Ivory|90000|2
+Hexed Fowl of Ebon|90000|2
+Holy Plate Lion|90000|2
+Heaven's Golem|90000|3
+Dark Offering|10001|3
+Manifestation of Repose|10011|2
+Vengeful Radiance|10011|3
+Pious Fox|10001|1
+Death Sentence|10001|2
+Tribunal of Good and Evil|10003|3
+Iron Maiden|10004|2
+Ancient Protector|10007|3
+Opposing Statues|10008|2
+Ironforged Fighter|10000|1
+Roan Winged Nexx|10000|2
+Mechanical Bowman|10007|1
+Gravikinetic Warrior|10007|1
+Silver Cog Spinner|10007|3
+Morton the Manipulator|10007|3
+Cruel Puppetmaster|10008|1
+Apostle of Destruction|10010|3
+Lishenna, Omen of Destruction|10010|4
+Enervating Mail|10010|4
+Liam, Master of Puppets|10011|3
+Marionette//Due|90000|4
+Puppeteer's Strings|10000|2
+Destructive Refrain|10010|3
+Alterplane Onslaught|10011|2
+Crystal Cannon|10008|2
+Angelic Sword Maiden|10000|1
+Goblinmount Demon|10001|2
+Wind God|10001|3
+Fortunehunter Feena|10003|2
+Lucius, Goblin Slayer|10003|3
+Goblin Princess|10004|2
+Ephemera, Angelic Slacker|10005|1
+Gruff Mountaineer Captain|10005|2
+Snow, Whitecat Sage|10005|3
+Hector|10005|3
+Helblindi|10006|3
+Qilin|10006|3
+Holy Angel Altaia|10007|2
+Apostle of Craving|10010|3
+Tin Soldier|90000|1
+Servant of Darkness|90000|4
+Flamelord of Deceit|90000|4
+Execution|10001|2
+Dance of Death|10002|1
+Call of Cocytus|10003|2
+Divine Retribution|10008|2
+Slash of the One|10011|3
+Treant|10000|1
+Fairy Caster|10001|1
+Elf Prophetess|10001|2
+Noble Fairy|10001|3
+Robin Hood|10001|3
+Verdant Steward|10002|1
+Crystalia Tia|10002|4
+Pegasus Elf|10003|2
+Lionel, Elf Prince|10003|2
+Elf of the Gemstones|10003|3
+Jungle Warden|10004|3
+Venus|10006|3
+Swiftgait Okami|10008|3
+Witherwood Guardian|10009|2
+Korwa, Ravishing Designer|10009|4
+Godhunter Selwyn|10009|4
+Hornet Soldier|10010|2
+Apostle of Unkilling|10010|3
+Forest Defender|10011|2
+Setus, the Beastblade|10011|3
+Will of the Forest|10001|3
+Titania's Sanctuary|10001|3
+Ninja Master|10000|1
+Sentry|10001|1
+Percival|10001|2
+Noble Knight|10001|2
+Aurelia, Regal Saber|10001|4
+Assault Commander|10002|1
+Avant Blader|10002|1
+Monika, Cloudhall Admiral|10003|2
+Albert, Levin Saber|10003|4
+Albert, Levin Saber|70002|4
+Albert, Levin Saber|10003|4
+Tristan of the Round Table|10004|1
+Luminous Mage|10004|2
+Kunoichi Master|10005|1
+White Ridge Swordsman|10005|3
+Pollux|10006|1
+Barbarossa|10006|4
+Castle Guardian|10007|1
+Sky Gladiator|10009|3
+Apostle of Usurpation|10010|3
+Giantsbane Swordsman|10010|3
+Magnolia, Battlefield Muse|10010|4
+Vane, Indomitable Knight|90000|3
+Siegfried, Dragonslayer|90000|3
+Lancelot, Twinfang Prodigy|90000|3
+Percival, Lord of Flames|90000|3
+Celia, Hope's Strategist|90000|4
+Celia, Despair's Messenger|90000|4
+Onslaught|10001|1
+Cyclone Blade|10003|2
+Unsheathed Blade|10006|1
+Round Table Assembly|10006|3
+Dragon Knights|10009|3
+Dance of Usurpation|10011|2
+Holy Purebomb|90000|2
+Arthurian Light|10001|3
+Support Cannon|10004|3
+Soldier's Vow|10011|3
+Lightning Shooter|10000|2
+Whirlwind Mage|10001|1
+Flame Witch|10001|2
+Ancient Alchemist|10001|3
+Grand Gargoyle|10002|1
+Sun Oracle Pascale|10002|4
+Ogler|10003|1
+Magic Girl Melvie|10004|3
+Illusionist|10005|2
+Falise, Leonardian Mage|10005|3
+Wizardess of Oz|10005|4
+Wild Golem|10006|3
+Class President Hanna|10007|3
+Mysteria, Magic Founder|10007|4
+Truthseeker Faust|10008|4
+Peacemancer|10009|1
+Orichalcum Golem|10010|4
+Centaur Shaman|10011|2
+Fate's Hand|10001|1
+Fate's Hand|10009|1
+Golem Protection|10001|2
+Winter's Caprice|10001|3
+Rimewind|10002|3
+Chain Lightning|10007|1
+Staff of Whirlwinds|10008|1
+Mysterian Rite|90000|1
+Conjuring Force|10001|3
+Emergency Summoning|90000|3
+Reactive Barrier|90000|3
+Disaster Dragon|10000|1
+Seabrand Dragon|10001|1
+Lightning Behemoth|10001|2
+Queen Serpent|10002|1
+Transmogrified Wyrm|10002|2
+Cunning Wyvern|10003|1
+Hippocampus|10004|1
+Venomous Pucewyrm|10004|2
+Wrath Drake|10004|2
+Sibyl of the Waterwyrm|10004|4
+Sibyl of the Waterwyrm|70002|4
+Beast Rider|10006|2
+Draconic Singer|10006|3
+Drakewing Assassin|10008|1
+Galua of Two Breaths|10008|2
+True Dragon Scathacha|10009|3
+Galmieux, Omen of Disdain|10010|4
+Dragon|90000|1
+Draconic Fervor|10003|2
+Tail Swing|10009|1
+Phoenix Roost|10001|3
+Dragonclaw Pendant|10003|1
+Gravewaker|10000|1
+Soul Eater|10001|1
+Soul Glutton|10001|2
+Soulhungry Wraith|10001|2
+Dullahan|10001|2
+Cerberus|10001|4
+Cerberus|70001|4
+Cerberus|10001|4
+Commander of Destruction|10002|1
+Charon|10002|2
+Ceridwen|10002|3
+Dolorblade Warrior|10004|2
+Ded Moroz|10005|3
+Dark Bladefiend|10006|1
+Saber Alter|70004|1
+Hresvelgr|10006|2
+Underworld Ruler Aisha|10007|4
+Death the Nyctophile|10008|1
+Melancholic Medium|10009|1
+Netherworld Horseman|10010|1
+Cerberus, Hound of Hades|10010|4
+Marian the Mummy|10011|1
+Call of the Void|10000|1
+Sow Death, Reap Life|10007|3
+Forbidden Art|90000|3
+Eternal Potion|90000|4
+Profane Resurrection|90000|1
+Fabled Treasure|90000|1
+Gluttonous Gorger|10001|1
+Vampire Bard|10001|2
+Erinyes|10001|3
+Beast Dominator|10001|4
+Soul Navigator|10002|1
+Bloody Mary|10002|4
+Squall Lancer|10003|2
+Mastema|10003|3
+Vlad |10004|2
+Dark Airjammer|10004|2
+Big Knuckle Bodyguard|10005|1
+Scarlet Sabreur|10005|2
+Bandersnatch|10005|2
+Fulminous Demon|10006|3
+Nacht|10007|4
+Delirious Demon|10008|1
+Oldblood King|10008|3
+Evil Eye Demon|10009|3
+Thunder Behemoth|10009|4
+Apostle of Lust|10010|3
+Milnard, Dark Fiend|10010|4
+Salome|10011|2
+Diabolus Agito|10011|4
+Buller, Saintly Maiden|90000|2
+Buller, Dark Maiden|90000|2
+Savage Hunt|10001|2
+Diabolic Drain|10001|3
+Greater Priestess|10000|2
+Healing Priestess|10001|1
+Cleric Lancer|10001|2
+Shrine Knight Maiden|10001|2
+Pinion Prince|10002|1
+Radiance Angel|10002|2
+Ancient Lion Spirit|10003|2
+Eidolon of Madness|10003|4
+Gravekeeper Sonia|10004|2
+Tenko|10005|2
+Temple Ogre|10006|2
+Berserker|70004|2
+Lycaon|10008|1
+Ceryneian Hind|10008|4
+Angelic Idol|10009|1
+Assault Priest|10010|3
+Pegasus|90000|1
+Guardian Fox|90000|1
+Regal Falcon|90000|1
+Adamantium Bird|90000|1
+Ceryneian Lighthind|90000|4
+Ceryneian Darkhind|90000|4
+Acolyte's Light|10000|1
+Pure Annihilation|10007|2
+Dual Flames|10000|2
+March Hare's Teatime|10005|2
+Tenko's Shrine|10008|3
+Forgotten Sanctuary|10011|1
+Mana Pistol Merc|10007|1
+Masked Puppet|10007|1
+Unidentified Subject|10007|2
+Automaton Soldier|10007|2
+Hakrabi|10007|3
+Spinaria, Keeper of Enigmas|10007|4
+Spinaria, Keeper of Enigmas|10007|4
+Dirk, Steelarm Battler|10008|2
+Enkidu|10009|1
+Nicholas, Stalwart Inventor|10009|2
+Zealot of Destruction|10011|1
+Dyne, Master Swordsman|10011|4
+Radiant Artifact|90000|1
+Robomi, Steel Warrior|90000|2
+Otherworld Rift|10007|3
+Heartless Battle|10008|3
+Captivating Conductor|10009|2
+Artifact Spark|10009|3
+Angel Crusher|10001|3
+Athena|10001|3
+Raging Ettin|10002|1
+Lion Champion|10005|2
+Mr. Full Moon|10006|1
+Suttungr|10008|3
+Katalina, Sky Guardian|10009|2
+Sgathaich|10010|1
+Mjerrabaine, Omen of One|10010|4
+Silent Rider|90000|4
+Scorpion of Greed|90000|4
+Demon of Purgatory|90000|4
+Spellbook Decryption|10002|1
+Elf Tracker|10000|1
+Magna Botanist|10000|2
+Elder Treant|10001|2
+Fairy Beast|10001|2
+Fairy Princess|10001|4
+Master of the Canopies|10002|2
+Elf Knight Cynthia|10002|3
+Grand Archer Selwyn|10002|3
+Maahes|10003|3
+Crystalia Aerin|10004|3
+Sylvan Elder|10005|2
+Beauty and the Beast|10005|4
+Ipiria|10006|1
+Dolorblade Demon|10006|2
+Cassiopeia|10006|4
+Cassiopeia|10006|4
+Fairy Saber|10007|3
+Yggdrasil|10008|4
+White Vanara|10008|4
+Greenglen Axeman|10008|4
+Forest Oracle Pascale|10011|4
+Sage Commander|10000|2
+Warbound Cavalier|10001|1
+Admiral|10001|1
+Sea Queen Otohime|10001|4
+Sea Queen Otohime|70001|4
+Tsubaki|10001|4
+Swordwhip Maid|10003|1
+Jolly Rogers|10004|2
+Axe Destroyer|10005|1
+Darksaber Melissa|10007|4
+Spartacus|10008|4
+Zeta, Crimson Lancer|10009|4
+Ironfist Beast Warrior|10009|4
+Alwida's Command|10001|3
+Council of Card Knights|10005|3
+Master Alchemist|10001|1
+Spurned Witch|10001|1
+Gem Golem|10001|2
+Witchcrafter Magisa|10001|2
+Shadow Witch|10002|2
+Blade Mage|10003|1
+Disaster Witch|10003|2
+Professor of Taboos|10003|3
+Hulking Giant|10004|4
+Hulking Giant|70002|4
+Mr. Heinlein, Shadow Mage|10005|2
+Master Mage Levi|10005|3
+Astrologist of the Mist|10006|1
+Arulumaya, Mystic Seer|10009|4
+Despondent Chimera|10009|4
+Sweet-Tooth Medusa|10011|4
+Mysterian Whitewyrm|90000|2
+Mysterian Blackwyrm|90000|2
+Eldritch Chimera|90000|2
+Eldritch Demon|90000|2
+Arcane Enlightenment|10001|3
+Calamitous Curse|10002|3
+Mutagenic Bolt|10004|3
+Grand Summoning|10007|3
+Truth's Adjudication|10010|2
+Second Curse|90000|3
+Dragonguard|10000|1
+Dragonrider Devil|10001|2
+Mist Dragon|10001|2
+Wyvern Cavalier|10001|3
+Chaos Dragonrider AGRS|70003|3
+Dark Dragoon Forte|10001|4
+Dark Dragoon Forte|70001|4
+Island Whale|10002|1
+Owl Guardian|10003|2
+Phoenix Rider Aina|10004|3
+Hippogryph Rider|10005|2
+Scaled Berserker|10006|1
+Twilight Dragoon Coda|10008|1
+Warbreaker Dragoon|10009|4
+Vile Violet Dragon|10011|2
+Windblast Dragon|90000|1
+Lightning Blast|10004|2
+Draconic Lance|10005|2
+Wyrm Spire|10001|3
+Ghostly Rider|10000|1
+Necropolis Queen|10001|2
+Deathly Tyrant|10001|3
+Balor|10003|3
+Ebon Reaper|10004|1
+Odile, Black Swan|10005|3
+Skeleton Prince|10007|3
+Ceridwen, Eternity Hunter|10008|4
+Charon, Stygian Ferrywoman|10010|3
+Crow, Regent of Darkness|10010|3
+Death's Breath|10001|3
+Imp Lancer|10000|1
+Rampaging Giant|10001|1
+Medusa|10001|3
+Queen Vampire|10001|4
+Queen Vampire|70001|4
+Demonic Thrall|10002|1
+Brazen Demoness|10003|1
+Flood Behemoth|10003|2
+Phantom Cat|10005|3
+Carabosse, Wicked Fairy|10005|4
+Fenrir|10006|2
+Jormungand|10006|4
+Vania, Nightshade Vampire|10008|4
+Pommern, Erste's Pride|10009|2
+Pactbound Demon|10011|2
+Kind Queen Vania|90000|4
+Blood Queen Vania|90000|4
+Demonic Storm|10000|2
+Stolen Life|10004|1
+Reach of the Archdemon|10007|3
+Divine Armor|10001|1
+Angelic Noble|10001|2
+Arch Priestess Laelia|10001|3
+Moon Al-mi'raj|10001|4
+Ramina, Moon Al-mi'raj|10001|4
+Kaguya|10002|3
+Winged Sentinel Garuda|10002|3
+Valhallan General|10003|3
+Calydonian Boar|10004|2
+Judge of Retribution|10004|3
+Dark Jeanne|10004|4
+Monk of Purification|10005|1
+Eagle Man|10005|2
+Hati|10005|2
+Odette, White Swan|10005|3
+Star Priestess|10006|2
+Aether of the White Wing|10006|4
+Arch Priestess Cattleya|10007|2
+Tutankhamun|10008|4
+De La Fille, Gem Princess|10009|4
+Laina, Sister of Judgment|10011|4
+Holywing Dragon|90000|1
+Barong|90000|1
+Unicorn|90000|2
+Holy King Lion|90000|3
+Themis's Decree|10001|3
+Chorus of Prayer|10001|3
+Ephemeral Moon|90000|3
+Black Iron Soldier|10000|1
+Captain Meteo|10007|1
+Safira, Synthetic Beast|10007|3
+Deus Ex Machina|10007|4
+Basileus, Outworld Invader|10009|2
+New Order|10010|4
+Marionette//Tre|90000|4
+Gabriel|10001|4
+Imperial Mammoth|10002|1
+Sahaquiel|10003|4
+Arriet, Soothing Harpist|10004|3
+Gigas|10006|2
+Zodiac Demon|10006|4
+Marduk|10008|4
+Armored Troll|10010|2
+Gilnelise, Omen of Craving|10010|4
+Reina, Evolution's Herald|10011|2
+Alterplane Arbiter|10011|4
+Flame and Glass|90000|4
+Gluttonous Behemoth|90000|4
+Eggsplosion|10005|1
+Dis's Damnation|90000|4
+Forest Archelon|10001|2
+Baalt, King of the Elves|10002|2
+Forest Gigas|10003|1
+Mighty Dwarf|10004|2
+Elf Queen|10004|4
+Luxglaive Bayle|10010|3
+Homecoming|10001|3
+Frontguard General|10001|3
+Koga Kunoichi|10002|2
+Roland the Incorruptible|10004|4
+Madlance Centaur|10011|2
+Durandal the Incorruptible|90000|4
+Dragonbond Mage|10001|3
+Snowman King|10008|3
+Bergent, Onion Patchmaster|10008|3
+Abyss Summoner|10009|2
+Ms. Miranda, Light Mage|10009|3
+Servant of Truth|10010|1
+Raio, Omen of Truth|10010|4
+Twin Guardians|10001|1
+Alchemical Lore|10001|2
+Multipart Experiment|10002|2
+Enchanted Sword|10004|2
+Expel Soul|10007|1
+Edict of Truth|10011|3
+Juno's Secret Laboratory|10001|3
+Dread Dragon|10000|2
+Skull Dragon|10001|1
+Glacial Dragon|10001|1
+Shenlong|10001|2
+Hydra|10001|3
+Neptune|10002|3
+Ebon Beast Warrior|10005|1
+Zirnitra, Dragon's Flame|10007|4
+Albacore|10009|1
+Adramelech|10009|4
+Jabberwock, Nightmare Spawn|10010|4
+Dragon Empress Otohime|10011|4
+Whitescale Dragon|90000|2
+Blackscale Dragon|90000|2
+Conflagration|10000|2
+Tilting at Windmills|10005|3
+Canyon of the Dragons|10006|2
+Undead King|10000|2
+Cursed Soldier|10001|1
+Orcus|10001|1
+Lord of the Flies|10002|4
+Underworld Watchman Khawy|10003|2
+Demonlord Eachtar |10004|4
+Mad Hatter|10005|1
+Dark Alice|10005|4
+Mail of Obliteration|10006|4
+Anubis|10007|2
+Fickle Resurrector|10008|3
+Hinterland Ghoul|10008|4
+Arcus, Ghostly Manager|10008|4
+Mist of Extinction|10006|3
+Plagued City|10009|3
+Infernal Crown|90000|3
+Abyss Beast|10000|2
+Alucard|10001|2
+Frenzied Juggernaut|10002|2
+Ice Blade Warfiend|10003|3
+Bloodhungry Matriarch|10003|4
+Soul Dominator|10004|3
+Emeralda, Demonic Officer|10005|3
+Gunnlod|10006|1
+Stheno|10006|3
+Calamity Bringer|10010|4
+Curate|10000|1
+White Knight|10001|2
+Skullfane|10001|4
+Soul Collector|10003|1
+Luxhorn Sarissa|10003|3
+Heresy's Avatar|10006|4
+Heavenly Knight|10007|4
+Godsworn Alexiel|10008|4
+Godsworn Alexiel|10008|4
+Sanctum Keepers|10010|1
+Holylord Eachtar|10011|4
+Manifestation of Faith|10003|1
+Colossal Construct|10007|2
+God Bullet Golem|10007|3
+Zwei, Murderous Puppet|10008|3
+That Which Erases|10008|4
+Electromagical Rhino|10008|4
+Silva, Ardent Sniper|10009|4
+Silver Automaton|10010|1
+Prime Artifact|90000|1
+Artifact Rhino|90000|4
+Gilgamesh|10001|2
+Lucifer|10001|4
+Archangel Reina|10002|3
+Odin|10002|4
+Earthshock Ogre|10004|3
+Rampaging Mammoth|10006|1
+Loki|10006|4
+Chronos|10007|4
+Heretical Hellbeast|90000|4
+Forest Giant|10001|2
+Ancient Forest Dragon|10001|3
+Rose Queen|10001|4
+White Wolf of Eldwood|10003|4
+Deepwood Anomaly|10004|4
+Deepwood Anomaly|70002|4
+Owlbear|10009|2
+Enraged General|10001|2
+Dragonewt Charlotte|10001|3
+Alexander|10002|4
+Fangblade Slayer|10003|3
+Captain Walfrid|10004|3
+Hero of Antiquity|10005|4
+King of the Horned Crown|10006|1
+Arthur, Knight King|10007|4
+Sky Fortress|10008|4
+Latham, Honorable Knight|10009|4
+Blazing Lion Admiral|10011|4
+Arch Summoner Erasmus|10001|4
+Anne, Belle of Mysteria|10003|3
+Elder Mage of Dragonlore|10004|3
+Silver Blade Golem|10007|4
+Fiery Embrace|10000|1
+Inferno Dragon|10001|1
+Zirnitra|10001|4
+Grea the Dragonborn|10003|3
+Ouroboros|10004|4
+Jabberwock|10005|4
+Frostfire Dragon|10007|1
+Dragonplate Warrior|10008|3
+Poseidon|10009|3
+Elios, Loyal Dragoon|10011|2
+Wildflame Dragon|10011|3
+Soul Grinder|10001|2
+Mordecai the Duelist|10001|3
+Pluto|10001|4
+Nephthys|10003|4
+Nephthys|70002|4
+Immortal Thane|10004|3
+Lute, Leonard Necromancer|10006|2
+Death Dragon Caller|10007|3
+Abyss Straddler|10007|4
+Death's Mistress|10011|2
+Giant Skull|90000|2
+Hell Lord Skeleton|90000|2
+Vile Torrent|10010|2
+Furiae|10001|3
+Azazel|10002|3
+Maelstrom Serpent|10004|4
+Spawn of the Abyss|10005|4
+Darkfeast Bat|10008|4
+Arion|10011|1
+Crimson Rose Queen|10011|4
+Medusiana|90000|4
+Revelation|10001|3
+Masked Giant|10001|1
+Jeanne d'Arc|10001|4
+Jeanne d'Arc|70001|4
+Taurus the Great|10006|3
+Lapis, Glorious Seraph|10010|4
+Themis's Purge|10009|3
+Enstatued Seraph|10002|4
+Tarnished Grail|10004|3
+Awakened Seraph|90000|4
+Renascent Seraph|90000|4
+Seraph Lapis, Glory Be|90000|4
+Airship Whale|10007|1
+Empyreal Swordsman|10007|3
+Magna Legacy|10007|4
+Orchis, Puppet Girl|10008|4
+Orchis, Puppet Girl|10008|4
+Draco Marionette|10011|1
+Orchis, Resolute Puppet|90000|4
+Orchis, Vengeful Puppet|90000|4
+Dark Angel Olivia|10002|4
+Israfil|10004|4
+Proto Bahamut|10009|4
+Prince of Cocytus|10011|4
+Human! Pyramid! Attack!|90000|1
+Sky Devouring Horror|10009|4
+Silver Bolt|10001|3
+Leonidas|10002|3
+Jiraiya|10010|4
+Leonidas's Resolve|90000|3
+Mythril Golem|10001|4
+Daria, Dimensional Witch|10003|4
+Daria, Dimensional Witch|10003|4
+Chimera|10004|2
+Wordwielder Ginger|10004|4
+Giant Chimera|10006|4
+Unbodied Witch|10008|4
+Anne, Mysterian Prodigy|10010|3
+Zealot of Truth|10011|1
+Final Curse|90000|3
+Orb Dragon|10001|3
+Fafnir|10001|4
+Imperial Dragoon|10003|4
+Aldos, Imperial Dragoon|10003|4
+Fortress Crab|10005|2
+Wyrm God of the Skies|10005|4
+Cetus|10006|2
+Frenzied Drake|10007|3
+Jerva of Draconic Mail|10008|4
+Polyphonic Roar|10002|3
+Lord Atomy|10001|4
+Andras|10002|2
+Corpsewyrm Fafnir|10011|4
+Temptress Vampire|10001|3
+Diabolus Psema|10007|4
+Calamity's Archdemon|10008|1
+Incandescent Dragon|10001|3
+Heavenly Aegis|10004|4
+Heavenly Aegis|70002|4
+Lion of the Golden City|10005|4
+Garuda, Ruler of Storms|10009|4
+Tzekibaba, Forsaken God|10009|4
+Battlefield Inquisitor|10011|2
+Amethyst Giant|10007|2
+Tylle, the Worldgate|10011|3
+Sylvia, the Condemner|10011|4
+Prince of Darkness|10001|4
+Bahamut|10003|4
+Zeus|10004|4
+Queen of the Dread Sea|10005|4
+Astaroth's Reckoning|90000|4
+King Elephant|10006|4
+Izudia, Omen of Unkilling|10010|4
+Flame Destroyer|10000|2
+Anne's Sorcery|90000|3
+Genesis Dragon|10001|3
+Python|10006|4
+Azi Dahaka|10007|4
+Lindworm|10008|4
+Zooey, Arbiter of the Skies|90000|4
+Virtuous Lindworm|90000|4
+Iniquitous Lindworm|90000|4
+Mordecai, Eternal Duelist|10009|4
+Purson|10009|4
+Vengeful Puppeteer Noah|10007|2
+Destruction in White|90000|4
+Destruction in Black|90000|4
+Zooey, Arbiter of the Skies|10009|4
+Prophecy of Doom|90000|4
+Prophetess of Creation|10010|4
+Dimension Shift|10001|3
