@@ -1,15 +1,10 @@
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
-import available_cards.basic.BasicBronze;
 
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.EnumSet;
 import java.util.List;
 import card_types.*;
-import card_parser.*;
+import parser.*;
 
 @WebServlet(urlPatterns = { "/hello" })
 public class HelloServlet3 extends GenericServlet {
@@ -28,11 +23,21 @@ public class HelloServlet3 extends GenericServlet {
 
         //Path path = Paths.get("ShadowOut.txt");
 
-        List<Cards> available_cards = Parser.parse_text_file();
+        List<Cards> available_cards = Card_Parser.parse_shadowout_text_file();
+
+        for(int card_index = 0; card_index < available_cards.size(); card_index++){
+            if(card_index>0){
+                if(available_cards.get(card_index).getName().contains(available_cards.get(card_index-1).getName())){
+                    available_cards.remove(card_index);
+                    card_index =- 1;
+                }
+            }
+        }
 
         for(Cards card:available_cards){
-            pw.println("<br>" + card.getName() + "    " + card.getExpansion() + "    " + card.getLiquefy_value());
+            pw.println("<br>" + card.getName() + "&nbsp;&nbsp;&nbsp;&nbsp;" + card.getExpansion() + "&nbsp;&nbsp;&nbsp;&nbsp;" + card.getRarity());
         }
+        pw.println("<br>" + available_cards.size());
         pw.close();
     }
 }
