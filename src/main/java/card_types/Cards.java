@@ -22,6 +22,8 @@ public class Cards {
         return this.expansion;
     }
 
+    public String getRarity() {return this.type.name(); }
+
     public int getLiquefy_value(){
         return this.type.getLiquefy_value();
     }

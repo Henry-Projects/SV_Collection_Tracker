@@ -1,0 +1,12 @@
+10000|Basic
+10001|Standard
+10002|Darkness Evolved
+10003|Rise of Bahamut
+10004|Tempest of the Gods
+10005|Wonderland Dreams
+10006|Starforged Legends
+10007|Chronogenesis
+10008|Dawnbreak Nightedge
+10009|Granblue Fantasy
+10010|Omen of the Ten
+10011|Altersphere
