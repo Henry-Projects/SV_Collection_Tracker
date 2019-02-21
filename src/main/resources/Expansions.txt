@@ -1,4 +1,3 @@
-10000|Basic
 10001|Standard
 10002|Darkness Evolved
 10003|Rise of Bahamut

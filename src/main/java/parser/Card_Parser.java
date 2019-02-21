@@ -28,27 +28,40 @@ public class Card_Parser {
         try {
             for (String card : parsed_rows) {
 
-                if ( expansion_id.contains(card.substring(card.indexOf("|") + 1, card.indexOf("|", card.indexOf("|") + 1)))) {
-                    switch (card.substring(card.length() - 1)) {
+            int expansion_index = card.indexOf("|");
+            int rarity_index = card.indexOf("|",expansion_index + 1);
+            int base_id_index = card.indexOf("|",rarity_index + 1);
+
+            System.out.println(card.substring(0, expansion_index) + "   " +
+                    card.substring(expansion_index + 1, rarity_index) + "   " +
+                    card.substring(rarity_index + 1, base_id_index) + "   " +
+                    card.substring(base_id_index + 1));
+
+                if ( expansion_id.contains(card.substring(expansion_index + 1, rarity_index))) {
+                    switch (card.substring(rarity_index + 1, base_id_index)) {
                         case "1":
-                            parsed_cards.add(new Cards(card.substring(0, card.indexOf("|")),
-                                    expansion_name.get(expansion_id.indexOf(card.substring(card.indexOf("|") + 1, card.indexOf("|", card.indexOf("|") + 1)))),
-                                    Rarity.NORMAL_BRONZE));
+                            parsed_cards.add(new Cards(card.substring(0, expansion_index),
+                                    expansion_name.get(expansion_id.indexOf(card.substring(expansion_index + 1, rarity_index))),
+                                    Rarity.NORMAL_BRONZE,
+                                    card.substring(base_id_index + 1)));
                             break;
                         case "2":
-                            parsed_cards.add(new Cards(card.substring(0, card.indexOf("|")),
-                                    expansion_name.get(expansion_id.indexOf(card.substring(card.indexOf("|") + 1, card.indexOf("|", card.indexOf("|") + 1)))),
-                                    Rarity.NORMAL_SILVER));
+                            parsed_cards.add(new Cards(card.substring(0, expansion_index),
+                                    expansion_name.get(expansion_id.indexOf(card.substring(expansion_index + 1, rarity_index))),
+                                    Rarity.NORMAL_SILVER,
+                                    card.substring(base_id_index + 1)));
                             break;
                         case "3":
-                            parsed_cards.add(new Cards(card.substring(0, card.indexOf("|")),
-                                    expansion_name.get(expansion_id.indexOf(card.substring(card.indexOf("|") + 1, card.indexOf("|", card.indexOf("|") + 1)))),
-                                    Rarity.NORMAL_GOLD));
+                            parsed_cards.add(new Cards(card.substring(0, expansion_index),
+                                    expansion_name.get(expansion_id.indexOf(card.substring(expansion_index + 1, rarity_index))),
+                                    Rarity.NORMAL_GOLD,
+                                    card.substring(base_id_index + 1)));
                             break;
                         case "4":
-                            parsed_cards.add(new Cards(card.substring(0, card.indexOf("|")),
-                                    expansion_name.get(expansion_id.indexOf(card.substring(card.indexOf("|") + 1, card.indexOf("|", card.indexOf("|") + 1)))),
-                                    Rarity.NORMAL_LEGENDARY));
+                            parsed_cards.add(new Cards(card.substring(0, expansion_index),
+                                    expansion_name.get(expansion_id.indexOf(card.substring(expansion_index + 1, rarity_index))),
+                                    Rarity.NORMAL_LEGENDARY,
+                                    card.substring(base_id_index + 1)));
                             break;
                     }
                 }
