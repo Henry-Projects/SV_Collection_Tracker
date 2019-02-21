@@ -32,11 +32,6 @@ public class Card_Parser {
             int rarity_index = card.indexOf("|",expansion_index + 1);
             int base_id_index = card.indexOf("|",rarity_index + 1);
 
-            System.out.println(card.substring(0, expansion_index) + "   " +
-                    card.substring(expansion_index + 1, rarity_index) + "   " +
-                    card.substring(rarity_index + 1, base_id_index) + "   " +
-                    card.substring(base_id_index + 1));
-
                 if ( expansion_id.contains(card.substring(expansion_index + 1, rarity_index))) {
                     switch (card.substring(rarity_index + 1, base_id_index)) {
                         case "1":
