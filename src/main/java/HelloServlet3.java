@@ -25,11 +25,12 @@ public class HelloServlet3 extends GenericServlet {
 
         List<Cards> available_cards = Card_Parser.parse_shadowout_text_file();
 
-        for(int card_index = 0; card_index < available_cards.size(); card_index++){
-            if(card_index>0){
-                if(available_cards.get(card_index).getName().contains(available_cards.get(card_index-1).getName())){
+        for(int card_index = 0; card_index < available_cards.size() - 1; card_index++){
+            for(int card_index2 = card_index + 1; card_index2 < available_cards.size(); card_index2++){
+                if(available_cards.get(card_index).getBase_id().equals(available_cards.get(card_index2).getBase_id())){
                     available_cards.remove(card_index);
                     card_index =- 1;
+                    break;
                 }
             }
         }
