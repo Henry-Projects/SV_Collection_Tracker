@@ -23,6 +23,18 @@ public class Owned_Cards extends Available_Cards{
 
     public int getAnimated() { return this.animated;}
 
+    public boolean is_Completed() {
+
+        boolean completed = false;
+
+        if(this.normal + this.animated >= 3){
+        completed = true;
+    }
+
+    return completed;
+
+    }
+
     public int getVial_value() { return this.normal * super.type.getLiquefy_value() + this.animated * super.type.getLiquefyAnimated_value();}
 
     public int getVials_required() {
