@@ -2,12 +2,15 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
 import cards.Available_Cards;
 import cards.Owned_Cards;
+import expansions_algorithms.Cards_Calculator;
 import parser.*;
+import card_types.Rarity;
 
 @WebServlet(urlPatterns = { "/hello" })
 public class HelloServlet3 extends GenericServlet {
@@ -17,14 +20,6 @@ public class HelloServlet3 extends GenericServlet {
             throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter pw = response.getWriter();
-        /*
-        EnumSet<BasicBronze> card_list;
-        card_list = EnumSet.allOf(BasicBronze.class);
-        for(BasicBronze c : card_list) {
-            pw.println("<B>" + c.getLiquefy_values() + " " + c.getRarity() + " " + c.toString() + "<br>");
-        */
-
-        //Path path = Paths.get("ShadowOut.txt");
 
         List<Available_Cards> available_cards = Available_Card_Parser.parse_shadowout_text_file();
 
@@ -50,6 +45,19 @@ public class HelloServlet3 extends GenericServlet {
         }
 
         pw.println("<br>" + owned_cards.size());
+
+        List<String> expansion_name = Expansion_Parser.get_expansion_lists("name");
+
+        DecimalFormat two_dec = new DecimalFormat("0.00");
+        two_dec.setMaximumFractionDigits(2);
+
+        for(String expansion:expansion_name) {
+            pw.println("<br>" + two_dec.format(Cards_Calculator.getExpected_Vials(owned_cards, expansion, Rarity.BRONZE)
+                    + Cards_Calculator.getExpected_Vials(owned_cards, expansion, Rarity.SILVER)
+                    + Cards_Calculator.getExpected_Vials(owned_cards, expansion, Rarity.GOLD)
+                    + Cards_Calculator.getExpected_Vials(owned_cards, expansion, Rarity.LEGENDARY)));
+        }
+
         //for(Available_Cards card:available_cards){
         //    pw.println("<br>" + card.getName() + "&nbsp;&nbsp;&nbsp;&nbsp;" + card.getExpansion() + "&nbsp;&nbsp;&nbsp;&nbsp;" + card.getRarity());
         //}
