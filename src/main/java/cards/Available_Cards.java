@@ -1,20 +1,22 @@
-package card_types;
+package cards;
 
 import card_types.Rarity;
 
-public class Cards {
+public class Available_Cards {
 
-    private String name;
-    private String expansion;
-    private Rarity type;
-    private String base_id;
+    public String name;
+    public String expansion;
+    public Rarity type;
+    public String base_id;
 
-    public Cards(String name, String expansion, Rarity type, String base_id){
+    public Available_Cards(String name, String expansion, Rarity type, String base_id){
         this.name = name;
         this.expansion = expansion;
         this.type = type;
         this.base_id = base_id;
     }
+
+    public Available_Cards(){ }
 
     public String getName(){
         return this.name;
