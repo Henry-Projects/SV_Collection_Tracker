@@ -1,21 +1,23 @@
 package parser;
 
 import card_types.*;
+import cards.Available_Cards;
+
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Card_Parser {
+public class Available_Card_Parser {
 
-    static public List<Cards> parse_shadowout_text_file() {
+    static public List<Available_Cards> parse_shadowout_text_file() {
 
-        List<Cards> parsed_cards = new ArrayList<>();
+        List<Available_Cards> parsed_cards = new ArrayList<>();
         String original_parsed_string="";
 
         try {
-            original_parsed_string = new String(Files.readAllBytes(Paths.get(Card_Parser.class.getResource("/ShadowOut.txt").toURI())), "UTF-8");
+            original_parsed_string = new String(Files.readAllBytes(Paths.get(Available_Card_Parser.class.getResource("/ShadowOut.txt").toURI())), "UTF-8");
         } catch (Exception e) {
             System.out.println("Check text file or path for card parsing");
         }
@@ -35,27 +37,27 @@ public class Card_Parser {
                 if ( expansion_id.contains(card.substring(expansion_index + 1, rarity_index))) {
                     switch (card.substring(rarity_index + 1, base_id_index)) {
                         case "1":
-                            parsed_cards.add(new Cards(card.substring(0, expansion_index),
+                            parsed_cards.add(new Available_Cards(card.substring(0, expansion_index),
                                     expansion_name.get(expansion_id.indexOf(card.substring(expansion_index + 1, rarity_index))),
-                                    Rarity.NORMAL_BRONZE,
+                                    Rarity.BRONZE,
                                     card.substring(base_id_index + 1)));
                             break;
                         case "2":
-                            parsed_cards.add(new Cards(card.substring(0, expansion_index),
+                            parsed_cards.add(new Available_Cards(card.substring(0, expansion_index),
                                     expansion_name.get(expansion_id.indexOf(card.substring(expansion_index + 1, rarity_index))),
-                                    Rarity.NORMAL_SILVER,
+                                    Rarity.SILVER,
                                     card.substring(base_id_index + 1)));
                             break;
                         case "3":
-                            parsed_cards.add(new Cards(card.substring(0, expansion_index),
+                            parsed_cards.add(new Available_Cards(card.substring(0, expansion_index),
                                     expansion_name.get(expansion_id.indexOf(card.substring(expansion_index + 1, rarity_index))),
-                                    Rarity.NORMAL_GOLD,
+                                    Rarity.GOLD,
                                     card.substring(base_id_index + 1)));
                             break;
                         case "4":
-                            parsed_cards.add(new Cards(card.substring(0, expansion_index),
+                            parsed_cards.add(new Available_Cards(card.substring(0, expansion_index),
                                     expansion_name.get(expansion_id.indexOf(card.substring(expansion_index + 1, rarity_index))),
-                                    Rarity.NORMAL_LEGENDARY,
+                                    Rarity.LEGENDARY,
                                     card.substring(base_id_index + 1)));
                             break;
                     }
