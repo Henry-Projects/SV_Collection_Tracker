@@ -26,16 +26,10 @@ public class Available_Cards {
         return this.expansion;
     }
 
-    public String getRarity() {return this.type.name(); }
+    public String getRarity_String() {return this.type.name(); }
+
+    public Rarity getRarity() {return this.type;}
 
     public String getBase_id() {return this.base_id;}
-
-    public int getLiquefy_value(){
-        return this.type.getLiquefy_value();
-    }
-
-    public int getCreate_value(){
-        return this.type.getCreate_value();
-    }
 
 }
