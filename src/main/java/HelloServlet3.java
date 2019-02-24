@@ -8,7 +8,7 @@ import java.util.List;
 
 import cards.Available_Cards;
 import cards.Owned_Cards;
-import expansions_algorithms.Cards_Calculator;
+import expansions_algorithms.Cards_List_Algorithms;
 import parser.*;
 import card_types.Rarity;
 
@@ -39,9 +39,18 @@ public class HelloServlet3 extends GenericServlet {
             owned_cards.add(new Owned_Cards(card.name,card.expansion,card.type,card.base_id));
         }
 
+        for( int i = 0; i <owned_cards.size(); i++){
+            if(owned_cards.get(i).getName().equals("Sonata of Silence")){
+                owned_cards.set(i, new Owned_Cards(owned_cards.get(i).getName(),owned_cards.get(i).getExpansion(),
+                        owned_cards.get(i).getRarity(),owned_cards.get(i).getBase_id(),3,3));
+                break;
+            }
+        }
+
         for(Owned_Cards card:owned_cards) {
-            pw.println("<br>" + card.getName() + "&nbsp;&nbsp;&nbsp;&nbsp;" + card.getExpansion() + "&nbsp;&nbsp;&nbsp;&nbsp;" + card.getRarity() +
-                    "&nbsp;&nbsp;&nbsp;&nbsp;" + card.getVial_value() + "&nbsp;&nbsp;&nbsp;&nbsp;" + card.getVials_required());
+            pw.println("<br>" + card.getName() + "&nbsp;&nbsp;&nbsp;&nbsp;" + card.getExpansion() + "&nbsp;&nbsp;&nbsp;&nbsp;" + card.getRarity_String() +
+                    "&nbsp;&nbsp;&nbsp;&nbsp;" + card.getVial_value() + "&nbsp;&nbsp;&nbsp;&nbsp;" + card.getVials_required() + "&nbsp;&nbsp;&nbsp;&nbsp;" +
+                    card.getExtras_LiquefyAnimated_value() + "&nbsp;&nbsp;&nbsp;&nbsp;" + card.getExtras_KeepAnimated_value());
         }
 
         pw.println("<br>" + owned_cards.size());
@@ -52,16 +61,12 @@ public class HelloServlet3 extends GenericServlet {
         two_dec.setMaximumFractionDigits(2);
 
         for(String expansion:expansion_name) {
-            pw.println("<br>" + two_dec.format(Cards_Calculator.getExpected_Vials(owned_cards, expansion, Rarity.BRONZE)
-                    + Cards_Calculator.getExpected_Vials(owned_cards, expansion, Rarity.SILVER)
-                    + Cards_Calculator.getExpected_Vials(owned_cards, expansion, Rarity.GOLD)
-                    + Cards_Calculator.getExpected_Vials(owned_cards, expansion, Rarity.LEGENDARY)));
+            pw.println("<br>" + two_dec.format(Cards_List_Algorithms.getExpected_Vials(owned_cards, expansion, Rarity.BRONZE)
+                    + Cards_List_Algorithms.getExpected_Vials(owned_cards, expansion, Rarity.SILVER)
+                    + Cards_List_Algorithms.getExpected_Vials(owned_cards, expansion, Rarity.GOLD)
+                    + Cards_List_Algorithms.getExpected_Vials(owned_cards, expansion, Rarity.LEGENDARY)));
         }
 
-        //for(Available_Cards card:available_cards){
-        //    pw.println("<br>" + card.getName() + "&nbsp;&nbsp;&nbsp;&nbsp;" + card.getExpansion() + "&nbsp;&nbsp;&nbsp;&nbsp;" + card.getRarity());
-        //}
-        //pw.println("<br>" + available_cards.size());
         pw.close();
     }
 }

@@ -2,7 +2,8 @@ package card_types;
 
 public enum Rarity {
 
-    BRONZE(10,50, 30), SILVER(50,200, 120), GOLD(250,800, 600), LEGENDARY(1000,3500, 2500);
+    BRONZE(10,50, 30), SILVER(50,200, 120),
+    GOLD(250,800, 600), LEGENDARY(1000,3500, 2500);
 
     private int liquefy_value;
     private int create_value;
@@ -14,7 +15,7 @@ public enum Rarity {
         liquefyAnimated_value = animated_liquefy;
     }
 
-    public int getLiquefy_value() {
+    public int getLiquefyNormal_value() {
         return liquefy_value;
     }
     public int getCreate_value() {

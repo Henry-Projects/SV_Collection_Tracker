@@ -35,7 +35,53 @@ public class Owned_Cards extends Available_Cards{
 
     }
 
-    public int getVial_value() { return this.normal * super.type.getLiquefy_value() + this.animated * super.type.getLiquefyAnimated_value();}
+    public int getVial_value() { return this.normal * super.type.getLiquefyNormal_value() + this.animated * super.type.getLiquefyAnimated_value();}
+
+    public int getExtras_LiquefyAnimated_value() {
+
+        int extra_vials = 0;
+
+        if(this.normal + this.animated > 3){
+            if(this.normal >= 3){
+                extra_vials = (this.normal * super.type.getLiquefyNormal_value() + this.animated * super.type.getLiquefyAnimated_value()) -
+                        (3 * super.type.getLiquefyNormal_value());
+            }else if(this.normal == 2){
+                extra_vials = (this.normal * super.type.getLiquefyNormal_value() + this.animated * super.type.getLiquefyAnimated_value()) -
+                        (2 * super.type.getLiquefyNormal_value()) - (super.type.getLiquefyAnimated_value());
+            }else if (this.normal == 1) {
+                extra_vials = (this.normal * super.type.getLiquefyNormal_value() + this.animated * super.type.getLiquefyAnimated_value()) -
+                        (super.type.getLiquefyNormal_value()) - (2 * super.type.getLiquefyAnimated_value());
+            }else{
+                extra_vials = (this.normal * super.type.getLiquefyNormal_value() + this.animated * super.type.getLiquefyAnimated_value()) -
+                        (3 * super.type.getLiquefyAnimated_value());
+            }
+        }
+
+        return extra_vials;
+    }
+
+    public int getExtras_KeepAnimated_value(){
+
+        int extra_vials = 0;
+
+        if(this.normal + this.animated > 3){
+            if(this.animated >= 3){
+                extra_vials = (this.normal * super.type.getLiquefyNormal_value() + this.animated * super.type.getLiquefyAnimated_value()) -
+                        (3 * super.type.getLiquefyAnimated_value());
+            }else if(this.animated == 2){
+                extra_vials = (this.normal * super.type.getLiquefyNormal_value() + this.animated * super.type.getLiquefyAnimated_value()) -
+                        (2 * super.type.getLiquefyAnimated_value()) - (super.type.getLiquefyNormal_value());
+            }else if (this.animated == 1) {
+                extra_vials = (this.normal * super.type.getLiquefyNormal_value() + this.animated * super.type.getLiquefyAnimated_value()) -
+                        (super.type.getLiquefyAnimated_value()) - (2 * super.type.getLiquefyNormal_value());
+            }else{
+                extra_vials = (this.normal * super.type.getLiquefyNormal_value() + this.animated * super.type.getLiquefyAnimated_value()) -
+                        (3 * super.type.getLiquefyNormal_value());
+            }
+        }
+
+        return extra_vials;
+    }
 
     public int getVials_required() {
 
