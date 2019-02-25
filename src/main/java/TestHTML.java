@@ -35,7 +35,7 @@ public class TestHTML extends HttpServlet {
         pw.println("<center>");
         pw.println("    <form name=\"FormTest\"");
         pw.println("          method=\"post\"");
-        pw.println("          action=\"http://localhost:8080/ShadowCollectionOptimizer/Test\">");
+        pw.println("          action=\"http://localhost:8080/SV_Collection_Tracker/Test\">");
         pw.println("        <table>");
         pw.println("            <tr>");
         pw.println("                <td><B>Enter Card Name</B></td>");
