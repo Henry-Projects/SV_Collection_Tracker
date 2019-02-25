@@ -5,13 +5,13 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>Henry-Projects</groupId>
-  <artifactId>ShadowCollectionOptimizer</artifactId>
+  <artifactId>SV_Collection_Tracker</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
 
-  <name>ShadowCollectionOptimizerMavenWebapp</name>
+  <name>SV_Collection_Tracker_MavenWebapp</name>
   <!-- FIXME change it to the project's website -->
-  <url>http://localhost:8080/ShadowCollectionOptimizer/</url>
+  <url>http://localhost:8080/SV_Collection_Tracker/</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -29,7 +29,7 @@
 
     <dependency>
       <groupId>Henry-Projects</groupId>
-      <artifactId>ShadowCollectionOptimizer</artifactId>
+      <artifactId>SV_Collection_Tracker</artifactId>
       <version>1.0-SNAPSHOT</version>
       <scope>system</scope>
       <systemPath>${env.CATALINA_HOME}/lib/servlet-api.jar</systemPath>
@@ -38,7 +38,7 @@
 
 
   <build>
-    <finalName>ShadowCollectionOptimizer</finalName>
+    <finalName>SV_Collection_Tracker</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <plugin>
