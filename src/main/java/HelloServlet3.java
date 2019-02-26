@@ -8,7 +8,7 @@ import java.util.List;
 
 import cards.Available_Cards;
 import cards.Owned_Cards;
-import expansions_algorithms.Cards_List_Algorithms;
+import expansions_algorithms.Cards_List_Methods;
 import parser.*;
 import card_types.Rarity;
 
@@ -61,10 +61,10 @@ public class HelloServlet3 extends GenericServlet {
         two_dec.setMaximumFractionDigits(2);
 
         for(String expansion:expansion_name) {
-            pw.println("<br>" + two_dec.format(Cards_List_Algorithms.getExpected_Vials(owned_cards, expansion, Rarity.BRONZE)
-                    + Cards_List_Algorithms.getExpected_Vials(owned_cards, expansion, Rarity.SILVER)
-                    + Cards_List_Algorithms.getExpected_Vials(owned_cards, expansion, Rarity.GOLD)
-                    + Cards_List_Algorithms.getExpected_Vials(owned_cards, expansion, Rarity.LEGENDARY)));
+            pw.println("<br>" + two_dec.format(Cards_List_Methods.getExpected_Vials(owned_cards, expansion, Rarity.BRONZE)
+                    + Cards_List_Methods.getExpected_Vials(owned_cards, expansion, Rarity.SILVER)
+                    + Cards_List_Methods.getExpected_Vials(owned_cards, expansion, Rarity.GOLD)
+                    + Cards_List_Methods.getExpected_Vials(owned_cards, expansion, Rarity.LEGENDARY)));
         }
 
         pw.close();

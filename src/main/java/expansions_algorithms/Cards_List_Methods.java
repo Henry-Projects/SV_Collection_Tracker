@@ -2,9 +2,36 @@ package expansions_algorithms;
 
 import cards.*;
 import card_types.*;
+import parser.Available_Card_Parser;
+
+import java.util.ArrayList;
 import java.util.List;
 
-public class Cards_List_Algorithms {
+public class Cards_List_Methods {
+
+    public static List<Owned_Cards> makeList_of_Owned_Cards(){
+
+        List<Available_Cards> available_cards = Available_Card_Parser.parse_shadowout_text_file();
+
+        for(int card_index = 0; card_index < available_cards.size() - 1; card_index++){
+            for(int card_index2 = card_index + 1; card_index2 < available_cards.size(); card_index2++){
+                if(available_cards.get(card_index).getBase_id().equals(available_cards.get(card_index2).getBase_id())){
+                    available_cards.remove(card_index);
+                    card_index =- 1;
+                    break;
+                }
+            }
+        }
+
+        List<Owned_Cards> owned_cards = new ArrayList<>();
+
+        for(Available_Cards card:available_cards){
+            owned_cards.add(new Owned_Cards(card.name,card.expansion,card.type,card.base_id));
+        }
+
+        return owned_cards;
+    }
+
 
     public static double getExpected_Vials(List<Owned_Cards> owned_cards, String expansion, Rarity rarity){
 
@@ -31,6 +58,8 @@ public class Cards_List_Algorithms {
                 (expected_normal_create_value * incomplete_ratio);
     }
 
+
+
     public static int getRequired_vials(List<Owned_Cards> owned_cards, String expansion, Rarity rarity){
 
         int required_vials = 0;
@@ -44,6 +73,8 @@ public class Cards_List_Algorithms {
         return required_vials;
     }
 
+
+
     public static int getExtras_LiquefyAnimated_vials(List<Owned_Cards> owned_cards, String expansion, Rarity rarity){
 
         int extra_vials = 0;
@@ -56,6 +87,8 @@ public class Cards_List_Algorithms {
         }
         return extra_vials;
     }
+
+
 
     public static int getExtras_KeepAnimated_vials(List<Owned_Cards> owned_cards, String expansion, Rarity rarity){
 
