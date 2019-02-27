@@ -61,10 +61,10 @@ public class HelloServlet3 extends GenericServlet {
         two_dec.setMaximumFractionDigits(2);
 
         for(String expansion:expansion_name) {
-            pw.println("<br>" + two_dec.format(Cards_List_Methods.getExpected_Vials(owned_cards, expansion, Rarity.BRONZE)
-                    + Cards_List_Methods.getExpected_Vials(owned_cards, expansion, Rarity.SILVER)
-                    + Cards_List_Methods.getExpected_Vials(owned_cards, expansion, Rarity.GOLD)
-                    + Cards_List_Methods.getExpected_Vials(owned_cards, expansion, Rarity.LEGENDARY)));
+            pw.println("<br>" + two_dec.format(Cards_List_Methods.getExpected_Vials_by_Rarity(owned_cards, expansion, Rarity.BRONZE)
+                    + Cards_List_Methods.getExpected_Vials_by_Rarity(owned_cards, expansion, Rarity.SILVER)
+                    + Cards_List_Methods.getExpected_Vials_by_Rarity(owned_cards, expansion, Rarity.GOLD)
+                    + Cards_List_Methods.getExpected_Vials_by_Rarity(owned_cards, expansion, Rarity.LEGENDARY)));
         }
 
         pw.close();
