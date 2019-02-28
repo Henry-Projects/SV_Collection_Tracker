@@ -33,11 +33,6 @@ public class Owned_Cards_Parser {
             int normal_count_beg_index = card_text_row.indexOf("|");
             int animated_count_beg_index = card_text_row.indexOf("|", normal_count_beg_index + 1);
 
-            System.out.println(normal_count_beg_index);
-            System.out.println(animated_count_beg_index);
-            System.out.println(card_text_row.substring(normal_count_beg_index + 1,animated_count_beg_index));
-            System.out.println(card_text_row.substring(animated_count_beg_index + 1));
-
             for(int i = 0; i < new_owned_cards.size(); i++){
 
                 if(card_text_row.substring(0,normal_count_beg_index).equals(new_owned_cards.get(i).getName())){
