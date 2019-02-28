@@ -22,9 +22,31 @@ public class Tracking extends HttpServlet {
         throws ServletException, IOException {
 
         String owned_cards_text = request.getParameter("owned_cards_text");
+        String selected_expansion = request.getParameter("selected_expansion");
 
         List<Owned_Cards> imported_owned_cards = Owned_Cards_Parser.importOwned_Cards_List(owned_cards_text);
 
+
+        List<String> expansion_name = Expansion_Parser.get_expansion_lists("name");
+
+        DecimalFormat two_dec = new DecimalFormat("#,###.00");
+        two_dec.setMaximumFractionDigits(2);
+
+        DecimalFormat comma_sep = new DecimalFormat("#,###");
+
+        double max_expected_vials = 0.0;
+        int required_grand_total_vials = 0;
+        int extras_liquefy_animated_grand_total_vials = 0;
+        int extras_keep_animated_grand_total_vials = 0;
+
+        for(String expansion:expansion_name){
+
+            max_expected_vials = Math.max(max_expected_vials, Cards_List_Methods.getExpected_Vials_Total(imported_owned_cards,expansion));
+            required_grand_total_vials += Cards_List_Methods.getRequired_Vials_Total(imported_owned_cards,expansion);
+            extras_liquefy_animated_grand_total_vials += Cards_List_Methods.getExtras_LiquefyAnimated_Vials_Total(imported_owned_cards,expansion);
+            extras_keep_animated_grand_total_vials += Cards_List_Methods.getExtras_KeepAnimated_Vials_Total(imported_owned_cards,expansion);
+
+        }
 
         response.setContentType("text/html");
         PrintWriter pw = response.getWriter();
@@ -52,6 +74,9 @@ public class Tracking extends HttpServlet {
         pw.println("            <tr>");
         pw.println("                <td><B>Copy Paste File Here:</B></td>");
         pw.println("                <td><textarea name=\"owned_cards_text\" rows=\"10\" cols=\"30\">" +   Owned_Cards_Parser.getOwned_Cards_Text(imported_owned_cards)  + "</textarea></td>");
+        pw.println("                <td><table><tr><td><B>Total Required Vials</B></td></tr><tr><td>" + comma_sep.format(required_grand_total_vials) + "</td></tr></table></td>");
+        pw.println("                <td><table><tr><td><B>Extras Vials (Liquefy Animated)</B></td></tr><tr><td>" + comma_sep.format(extras_liquefy_animated_grand_total_vials) + "</td></tr></table></td>");
+        pw.println("                <td><table><tr><td><B>Extras Vials (Keep Animated)</B></td></tr><tr><td>" + comma_sep.format(extras_keep_animated_grand_total_vials) + "</td></tr></table></td>");
         pw.println("            </tr>");
         pw.println("        </table>");
         pw.println("        <input type=\"submit\" value=\"Update\">");
@@ -59,23 +84,13 @@ public class Tracking extends HttpServlet {
         pw.println("</center>");
 
 
-        List<String> expansion_name = Expansion_Parser.get_expansion_lists("name");
-
-        DecimalFormat two_dec = new DecimalFormat("0.00");
-        two_dec.setMaximumFractionDigits(2);
-
-        double max_expected_vials = 0.0;
-
-        for(String expansion:expansion_name){
-            max_expected_vials = Math.max(max_expected_vials, Cards_List_Methods.getExpected_Vials_Total(imported_owned_cards,expansion));
-        }
 
         pw.println("<center>");
         pw.println("    <table>");
         pw.println("        <tr>");
         pw.println("            <td>");
         pw.println("                <table>");
-        pw.println("                    <tr><td style=\"text-align: left;\"><b>Expansions: </b></td></tr>");
+        pw.println("                    <tr><td style=\"text-align: left;\"><b>Expansions:</b></td></tr>");
         pw.println("                    <tr><td style=\"text-align: left;\">Expected Vials Bronze: </td></tr>");
         pw.println("                    <tr><td style=\"text-align: left;\">Expected Vials Silver: </td></tr>");
         pw.println("                    <tr><td style=\"text-align: left;\">Expected Vials Gold: </td></tr>");
@@ -86,17 +101,6 @@ public class Tracking extends HttpServlet {
         pw.println("                    <tr><td style=\"text-align: left;\">Required Vials Gold: </td></tr>");
         pw.println("                    <tr><td style=\"text-align: left;\">Required Vials Legendary: </td></tr>");
         pw.println("                    <tr><td style=\"text-align: left;\"><b>Required Vials Total: </b></td></tr>");
-        pw.println("                    <tr><td style=\"text-align: left;\">Extra Vials (Liquefy Animated) Bronze: </td></tr>");
-        pw.println("                    <tr><td style=\"text-align: left;\">Extra Vials (Liquefy Animated) Silver: </td></tr>");
-        pw.println("                    <tr><td style=\"text-align: left;\">Extra Vials (Liquefy Animated) Gold: </td></tr>");
-        pw.println("                    <tr><td style=\"text-align: left;\">Extra Vials (Liquefy Animated) Legendary: </td></tr>");
-        pw.println("                    <tr><td style=\"text-align: left;\"><b>Extra Vials (Liquefy Animated) Total: </b></td></tr>");
-        pw.println("                    <tr><td style=\"text-align: left;\">Extra Vials (Keep Animated) Bronze: </td></tr>");
-        pw.println("                    <tr><td style=\"text-align: left;\">Extra Vials (Keep Animated) Silver: </td></tr>");
-        pw.println("                    <tr><td style=\"text-align: left;\">Extra Vials (Keep Animated) Gold: </td></tr>");
-        pw.println("                    <tr><td style=\"text-align: left;\">Extra Vials (Keep Animated) Legendary: </td></tr>");
-        pw.println("                    <tr><td style=\"text-align: left;\"><b>Extra Vials (Keep Animated) Total: </b></td></tr>");
-
         pw.println("               </table>");
         pw.println("            </td>");
 
@@ -107,9 +111,9 @@ public class Tracking extends HttpServlet {
             pw.println("        <table>");
 
             if(Cards_List_Methods.getExpected_Vials_Total(imported_owned_cards,expansion)==max_expected_vials){
-                pw.println("            <tr><td style=\"color:blue\"><b>" + expansion + "</b></td></tr>");
+                pw.println("            <tr><td style=\"color:blue\"><b><form name=\"expansion\" method=\"post\" action=\"http://localhost:8080/SV_Collection_Tracker/Tracking\"><input type=submit name=\"selected_expansion\" value=\"" + expansion + "\"></form></b></td></tr>");
             }else{
-                pw.println("            <tr><td><b>" + expansion + "</b></td></tr>");
+                pw.println("            <tr><td><b><form name=\"expansion\" method=\"post\" action=\"http://localhost:8080/SV_Collection_Tracker/Tracking\"><input type=submit name=\"selected_expansion\" value=\"" + expansion + "\"></form></b></td></tr>");
             }
 
 
@@ -124,24 +128,17 @@ public class Tracking extends HttpServlet {
                 pw.println("            <tr><td><b>" + two_dec.format(Cards_List_Methods.getExpected_Vials_Total(imported_owned_cards,expansion)) + "</b></td></tr>");
             }
 
+            int required_bronze = Cards_List_Methods.getRequired_Vials_by_Rarity(imported_owned_cards,expansion, Rarity.BRONZE)/Rarity.BRONZE.getCreate_value();
+            int required_silver = Cards_List_Methods.getRequired_Vials_by_Rarity(imported_owned_cards,expansion, Rarity.SILVER)/Rarity.SILVER.getCreate_value();
+            int required_gold = Cards_List_Methods.getRequired_Vials_by_Rarity(imported_owned_cards,expansion, Rarity.GOLD)/Rarity.GOLD.getCreate_value();
+            int required_legendary = Cards_List_Methods.getRequired_Vials_by_Rarity(imported_owned_cards,expansion, Rarity.LEGENDARY)/Rarity.LEGENDARY.getCreate_value();
+            int required_total = required_bronze + required_silver + required_gold + required_legendary;
 
-            pw.println("            <tr><td>" + Cards_List_Methods.getRequired_Vials_by_Rarity(imported_owned_cards,expansion, Rarity.BRONZE) + "</td></tr>");
-            pw.println("            <tr><td>" + Cards_List_Methods.getRequired_Vials_by_Rarity(imported_owned_cards,expansion, Rarity.SILVER) + "</td></tr>");
-            pw.println("            <tr><td>" + Cards_List_Methods.getRequired_Vials_by_Rarity(imported_owned_cards,expansion, Rarity.GOLD) + "</td></tr>");
-            pw.println("            <tr><td>" + Cards_List_Methods.getRequired_Vials_by_Rarity(imported_owned_cards,expansion, Rarity.LEGENDARY) + "</td></tr>");
-            pw.println("            <tr><td><b>" + Cards_List_Methods.getRequired_Vials_Total(imported_owned_cards,expansion) + "</b></td></tr>");
-
-            pw.println("            <tr><td>" + Cards_List_Methods.getExtras_LiquefyAnimated_Vials_by_Rarity(imported_owned_cards,expansion, Rarity.BRONZE) + "</td></tr>");
-            pw.println("            <tr><td>" + Cards_List_Methods.getExtras_LiquefyAnimated_Vials_by_Rarity(imported_owned_cards,expansion, Rarity.SILVER) + "</td></tr>");
-            pw.println("            <tr><td>" + Cards_List_Methods.getExtras_LiquefyAnimated_Vials_by_Rarity(imported_owned_cards,expansion, Rarity.GOLD) + "</td></tr>");
-            pw.println("            <tr><td>" + Cards_List_Methods.getExtras_LiquefyAnimated_Vials_by_Rarity(imported_owned_cards,expansion, Rarity.LEGENDARY) + "</td></tr>");
-            pw.println("            <tr><td><b>" + Cards_List_Methods.getExtras_LiquefyAnimated_Vials_Total(imported_owned_cards,expansion) + "</b></td></tr>");
-
-            pw.println("            <tr><td>" + Cards_List_Methods.getExtras_KeepAnimated_Vials_by_Rarity(imported_owned_cards,expansion, Rarity.BRONZE) + "</td></tr>");
-            pw.println("            <tr><td>" + Cards_List_Methods.getExtras_KeepAnimated_Vials_by_Rarity(imported_owned_cards,expansion, Rarity.SILVER) + "</td></tr>");
-            pw.println("            <tr><td>" + Cards_List_Methods.getExtras_KeepAnimated_Vials_by_Rarity(imported_owned_cards,expansion, Rarity.GOLD) + "</td></tr>");
-            pw.println("            <tr><td>" + Cards_List_Methods.getExtras_KeepAnimated_Vials_by_Rarity(imported_owned_cards,expansion, Rarity.LEGENDARY) + "</td></tr>");
-            pw.println("            <tr><td><b>" + Cards_List_Methods.getExtras_KeepAnimated_Vials_Total(imported_owned_cards,expansion) + "</b></td></tr>");
+            pw.println("            <tr><td>" + comma_sep.format(Cards_List_Methods.getRequired_Vials_by_Rarity(imported_owned_cards,expansion, Rarity.BRONZE)) + " (" + required_bronze + ")" + "</td></tr>");
+            pw.println("            <tr><td>" + comma_sep.format(Cards_List_Methods.getRequired_Vials_by_Rarity(imported_owned_cards,expansion, Rarity.SILVER)) + " (" + required_silver + ")" + "</td></tr>");
+            pw.println("            <tr><td>" + comma_sep.format(Cards_List_Methods.getRequired_Vials_by_Rarity(imported_owned_cards,expansion, Rarity.GOLD)) + " (" + required_gold + ")" + "</td></tr>");
+            pw.println("            <tr><td>" + comma_sep.format(Cards_List_Methods.getRequired_Vials_by_Rarity(imported_owned_cards,expansion, Rarity.LEGENDARY)) + " (" + required_legendary + ")" + "</td></tr>");
+            pw.println("            <tr><td><b>" + comma_sep.format(Cards_List_Methods.getRequired_Vials_Total(imported_owned_cards,expansion)) + " (" + required_total + ")" + "</b></td></tr>");
 
             pw.println("        </table>");
             pw.println("     </td>"); }
@@ -149,8 +146,11 @@ public class Tracking extends HttpServlet {
         pw.println("      </tr>");
         pw.println("   </table>");
         pw.println("</center>");
+        pw.println(selected_expansion);
         pw.println("</body>");
         pw.println("</html>");
+
+        pw.println();
 
         /*for(Owned_Cards card:imported_owned_cards){
 
