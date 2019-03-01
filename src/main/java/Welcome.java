@@ -6,7 +6,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import card_types.Rarity;
 import cards.Owned_Cards;
@@ -61,6 +63,34 @@ public class Welcome extends HttpServlet {
 
         List<Owned_Cards> imported_owned_cards = Owned_Cards_Parser.importOwned_Cards_List(owned_cards_text);
 
+        //try {
+            if (selected_expansion == null) {
+                for (int i = 0; i < imported_owned_cards.size(); i++) {
+                    if (request.getParameter(imported_owned_cards.get(i).getName() + "|Normal_Count") != null) {
+                        int card_count;
+                        if(request.getParameter(imported_owned_cards.get(i).getName() + "|Normal_Count").equals("")){
+                            card_count = 0;
+                        }else{
+                            card_count = Integer.valueOf(request.getParameter(imported_owned_cards.get(i).getName() + "|Normal_Count"));
+                        }
+                        imported_owned_cards.set(i, new Owned_Cards(imported_owned_cards.get(i).getName(), imported_owned_cards.get(i).getExpansion(),
+                                imported_owned_cards.get(i).getRarity(), imported_owned_cards.get(i).getBase_id(),
+                                card_count + imported_owned_cards.get(i).getNormal(), imported_owned_cards.get(i).getAnimated()));
+                    }
+                    if (request.getParameter(imported_owned_cards.get(i).getName() + "|Animated_Count") != null) {
+                            int card_count;
+                            if(request.getParameter(imported_owned_cards.get(i).getName() + "|Animated_Count").equals("")){
+                                card_count = 0;
+                            }else{
+                                card_count = Integer.valueOf(request.getParameter(imported_owned_cards.get(i).getName() + "|Animated_Count"));
+                            }
+                        imported_owned_cards.set(i, new Owned_Cards(imported_owned_cards.get(i).getName(), imported_owned_cards.get(i).getExpansion(),
+                                imported_owned_cards.get(i).getRarity(), imported_owned_cards.get(i).getBase_id(),
+                                imported_owned_cards.get(i).getNormal(), card_count + imported_owned_cards.get(i).getAnimated()));
+                    }
+                }
+            }
+        //}catch(NumberFormatException e){}
 
         List<String> expansion_name = Expansion_Parser.get_expansion_lists("name");
 
@@ -145,16 +175,14 @@ public class Welcome extends HttpServlet {
             pw.println("        <table>");
 
             if(Cards_List_Methods.getExpected_Vials_Total(imported_owned_cards,expansion)==max_expected_vials){
-                pw.println("            <tr><td style=\"color:blue\"><b><input type=submit name=\"selected_expansion\" value=\"" + expansion + "\"></b></td></tr>");
+                pw.println("            <tr><td style=\"color:blue\"><b><input type=submit name=\"selected_expansion\" value=\"" + expansion + "\" style=\"color:white;background:green\"></b></td></tr>");
             }else{
                 pw.println("            <tr><td><b><input type=submit name=\"selected_expansion\" value=\"" + expansion + "\"></b></td></tr>");
             }
 
-
-            pw.println("            <tr><td>" + two_dec.format(Cards_List_Methods.getExpected_Vials_by_Rarity(imported_owned_cards,expansion, Rarity.BRONZE)) + "</td></tr>");
-            pw.println("            <tr><td>" + two_dec.format(Cards_List_Methods.getExpected_Vials_by_Rarity(imported_owned_cards,expansion, Rarity.SILVER)) + "</td></tr>");
-            pw.println("            <tr><td>" + two_dec.format(Cards_List_Methods.getExpected_Vials_by_Rarity(imported_owned_cards,expansion, Rarity.GOLD)) + "</td></tr>");
-            pw.println("            <tr><td>" + two_dec.format(Cards_List_Methods.getExpected_Vials_by_Rarity(imported_owned_cards,expansion, Rarity.LEGENDARY)) + "</td></tr>");
+            for(Rarity rarity:Rarity.values()){
+                pw.println("            <tr><td>" + two_dec.format(Cards_List_Methods.getExpected_Vials_by_Rarity(imported_owned_cards,expansion, rarity)) + "</td></tr>");
+            }
 
             if(Cards_List_Methods.getExpected_Vials_Total(imported_owned_cards,expansion)==max_expected_vials){
                 pw.println("            <tr><td style=\"color:blue\"><b>" + two_dec.format(Cards_List_Methods.getExpected_Vials_Total(imported_owned_cards,expansion)) + "</b></td></tr>");
@@ -162,17 +190,15 @@ public class Welcome extends HttpServlet {
                 pw.println("            <tr><td><b>" + two_dec.format(Cards_List_Methods.getExpected_Vials_Total(imported_owned_cards,expansion)) + "</b></td></tr>");
             }
 
-            int required_bronze = Cards_List_Methods.getRequired_Vials_by_Rarity(imported_owned_cards,expansion, Rarity.BRONZE)/Rarity.BRONZE.getCreate_value();
-            int required_silver = Cards_List_Methods.getRequired_Vials_by_Rarity(imported_owned_cards,expansion, Rarity.SILVER)/Rarity.SILVER.getCreate_value();
-            int required_gold = Cards_List_Methods.getRequired_Vials_by_Rarity(imported_owned_cards,expansion, Rarity.GOLD)/Rarity.GOLD.getCreate_value();
-            int required_legendary = Cards_List_Methods.getRequired_Vials_by_Rarity(imported_owned_cards,expansion, Rarity.LEGENDARY)/Rarity.LEGENDARY.getCreate_value();
-            int required_total = required_bronze + required_silver + required_gold + required_legendary;
+            int required_cards_total = 0;
+            for(Rarity rarity:Rarity.values()){
+                int required_cards = Cards_List_Methods.getRequired_Vials_by_Rarity(imported_owned_cards,expansion, rarity)/rarity.getCreate_value();
+                required_cards_total += required_cards;
 
-            pw.println("            <tr><td>" + comma_sep.format(Cards_List_Methods.getRequired_Vials_by_Rarity(imported_owned_cards,expansion, Rarity.BRONZE)) + " (" + required_bronze + ")" + "</td></tr>");
-            pw.println("            <tr><td>" + comma_sep.format(Cards_List_Methods.getRequired_Vials_by_Rarity(imported_owned_cards,expansion, Rarity.SILVER)) + " (" + required_silver + ")" + "</td></tr>");
-            pw.println("            <tr><td>" + comma_sep.format(Cards_List_Methods.getRequired_Vials_by_Rarity(imported_owned_cards,expansion, Rarity.GOLD)) + " (" + required_gold + ")" + "</td></tr>");
-            pw.println("            <tr><td>" + comma_sep.format(Cards_List_Methods.getRequired_Vials_by_Rarity(imported_owned_cards,expansion, Rarity.LEGENDARY)) + " (" + required_legendary + ")" + "</td></tr>");
-            pw.println("            <tr><td><b>" + comma_sep.format(Cards_List_Methods.getRequired_Vials_Total(imported_owned_cards,expansion)) + " (" + required_total + ")" + "</b></td></tr>");
+                pw.println("            <tr><td>" + comma_sep.format(Cards_List_Methods.getRequired_Vials_by_Rarity(imported_owned_cards,expansion, rarity)) + " (" + required_cards + ")" + "</td></tr>");
+            }
+
+            pw.println("            <tr><td><b>" + comma_sep.format(Cards_List_Methods.getRequired_Vials_Total(imported_owned_cards,expansion)) + " (" + required_cards_total + ")" + "</b></td></tr>");
 
             pw.println("        </table>");
             pw.println("     </td>"); }
@@ -180,26 +206,45 @@ public class Welcome extends HttpServlet {
         pw.println("      </tr>");
         pw.println("   </table>");
         pw.println("</center>");
-        
+
         if(selected_expansion == null){
             pw.println("Select an expansion!");
         }else{
-            pw.println(selected_expansion);
+            pw.println("<B>" +selected_expansion +"</B>:");
+
+            List<Owned_Cards> sorted_cards = imported_owned_cards.stream()
+                    .sorted((Owned_Cards card1, Owned_Cards card2) -> card1.getName().compareTo(card2.getName()))
+                    .collect(Collectors.toList());
+
+            pw.println("<table><tr>");
+
+            for(Rarity rarity:Rarity.values()) {
+                pw.println("<td style=\"vertical-align:top\">");
+                pw.println("<table><tr>");
+                pw.println("<td>" + rarity + "</td>");
+                pw.println("<td>Quantity (N, A)</td>");
+                pw.println("<td>Normal</td>");
+                pw.println("<td>Animated</td>");
+                pw.println("</tr>");
+                for (Owned_Cards card : sorted_cards) {
+                    if (card.getExpansion().equals(selected_expansion) & card.getRarity().equals(rarity)) {
+                        pw.println("<tr>");
+                        pw.println("<td>" + card.getName() + "</td>");
+                        pw.println("<td>(" + card.getNormal() + ", " + card.getAnimated() + ")</td>");
+                        pw.println("<td> <input type=\"text\" name=\"" + card.getName() + "|Normal_Count\" size=\"3\"></td>");
+                        pw.println("<td> <input type=\"text\" name=\"" + card.getName() + "|Animated_Count\" size=\"3\"></td>");
+                        pw.println("</tr>");
+                    }
+                }
+                pw.println("</table>");
+                pw.println("</td>");
+            }
+            pw.println("</tr></table>");
         }
 
         pw.println("</form>");
         pw.println("</body>");
         pw.println("</html>");
-
-        pw.println();
-
-        /*for(Owned_Cards card:imported_owned_cards){
-
-                pw.println("<br>" + card.getName() + "&nbsp;&nbsp;&nbsp;&nbsp;" + card.getExpansion() + "&nbsp;&nbsp;&nbsp;&nbsp;" + card.getRarity_String() +
-                        "&nbsp;&nbsp;&nbsp;&nbsp;" + card.getVial_value() + "&nbsp;&nbsp;&nbsp;&nbsp;" + card.getVials_required() + "&nbsp;&nbsp;&nbsp;&nbsp;" +
-                        card.getExtras_LiquefyAnimated_value() + "&nbsp;&nbsp;&nbsp;&nbsp;" + card.getExtras_KeepAnimated_value());
-
-        }*/
 
     }
 }
