@@ -22,30 +22,39 @@ public class Owned_Cards_Parser {
     }
 
 
-    public static List<Owned_Cards> importOwned_Cards_List(String owned_cards_text){
+    public static List<Owned_Cards> importOwned_Cards_List (String owned_cards_text)throws Parsed_Row_Exception{
 
         List<Owned_Cards> new_owned_cards = Cards_List_Methods.makeList_of_Owned_Cards();
 
         List<String> parsed_rows = new ArrayList<>(Arrays.asList(owned_cards_text.split("\\r?\\n")));
 
-        for(String card_text_row:parsed_rows){
+        int exception_row_index = 0;
+        String exception_parsed_row = "";
 
-            int normal_count_beg_index = card_text_row.indexOf("|");
-            int animated_count_beg_index = card_text_row.indexOf("|", normal_count_beg_index + 1);
+        try {
+            for(String card_text_row:parsed_rows){
 
-            for(int i = 0; i < new_owned_cards.size(); i++){
+                exception_row_index += 1;
+                exception_parsed_row = card_text_row;
+                int normal_count_beg_index = card_text_row.indexOf("|");
+                int animated_count_beg_index = card_text_row.indexOf("|", normal_count_beg_index + 1);
 
-                if(card_text_row.substring(0,normal_count_beg_index).equals(new_owned_cards.get(i).getName())){
+                for(int i = 0; i < new_owned_cards.size(); i++){
 
-                    new_owned_cards.set(i, new Owned_Cards(new_owned_cards.get(i).getName(),new_owned_cards.get(i).getExpansion(),
-                            new_owned_cards.get(i).getRarity(),new_owned_cards.get(i).getBase_id(),
-                            Integer.valueOf(card_text_row.substring(normal_count_beg_index + 1,animated_count_beg_index)),
-                            Integer.valueOf(card_text_row.substring(animated_count_beg_index + 1))));
+                    if (card_text_row.substring(0, normal_count_beg_index).equals(new_owned_cards.get(i).getName())) {
+
+                        new_owned_cards.set(i, new Owned_Cards(new_owned_cards.get(i).getName(), new_owned_cards.get(i).getExpansion(),
+                                new_owned_cards.get(i).getRarity(), new_owned_cards.get(i).getBase_id(),
+                                Integer.valueOf(card_text_row.substring(normal_count_beg_index + 1, animated_count_beg_index).trim()),
+                                Integer.valueOf(card_text_row.substring(animated_count_beg_index + 1).trim())));
+                    }
                 }
             }
+        }catch(NumberFormatException e){
+            throw  new Parsed_Row_Exception(exception_row_index, parsed_rows.get(exception_row_index - 1));
+        }catch(Exception e){
+            throw new Parsed_Row_Exception(exception_row_index, exception_parsed_row);
         }
-
         return new_owned_cards;
     }
-
 }
