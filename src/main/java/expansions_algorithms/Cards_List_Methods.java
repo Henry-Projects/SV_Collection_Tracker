@@ -96,19 +96,6 @@ public class Cards_List_Methods {
     }
 
 
-    public static int getExtras_LiquefyAnimated_Vials_by_Rarity(List<Owned_Cards> owned_cards, String expansion, Rarity rarity){
-
-        int extra_vials = 0;
-
-        for (Owned_Cards card : owned_cards) {
-            if (card.expansion.equals(expansion) & card.getRarity_String().equals(rarity.name())) {
-                extra_vials += card.getExtras_LiquefyAnimated_value();
-
-            }
-        }
-        return extra_vials;
-    }
-
     public static int getExtras_LiquefyAnimated_Vials_Total(List<Owned_Cards> owned_cards, String expansion){
 
         int extra_vials = 0;
@@ -116,20 +103,6 @@ public class Cards_List_Methods {
         for (Owned_Cards card : owned_cards) {
             if (card.expansion.equals(expansion)) {
                 extra_vials += card.getExtras_LiquefyAnimated_value();
-
-            }
-        }
-        return extra_vials;
-    }
-
-
-    public static int getExtras_KeepAnimated_Vials_by_Rarity(List<Owned_Cards> owned_cards, String expansion, Rarity rarity){
-
-        int extra_vials = 0;
-
-        for (Owned_Cards card : owned_cards) {
-            if (card.expansion.equals(expansion) & card.getRarity_String().equals(rarity.name())) {
-                extra_vials += card.getExtras_KeepAnimated_value();
 
             }
         }

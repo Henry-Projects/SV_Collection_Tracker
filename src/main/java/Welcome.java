@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Enumeration;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -21,9 +23,10 @@ public class Welcome extends HttpServlet {
 
     public void doGet(HttpServletRequest request,
                        HttpServletResponse response)
-            throws ServletException, IOException {
+            throws IOException {
 
-        List<Owned_Cards> owned_cards = Cards_List_Methods.makeList_of_Owned_Cards();
+
+            List<Owned_Cards> owned_cards = Cards_List_Methods.makeList_of_Owned_Cards();
 
         response.setContentType("text/html");
         PrintWriter pw = response.getWriter();
@@ -31,6 +34,14 @@ public class Welcome extends HttpServlet {
         pw.println("<!DOCTYPE html>");
         pw.println("<html lang=\"en\">");
         pw.println("<head>");
+        pw.println("<style>");
+
+        pw.println("td {\n" +
+                "text-align: center;\n" +
+                "vertical-align: middle;\n" +
+                "}");
+
+        pw.println("</style>");
         pw.println("    <meta charset=\"UTF-8\">");
         pw.println("    <title>SV_Collection_Tracker: Welcome</title>");
         pw.println("</head>");
@@ -56,41 +67,122 @@ public class Welcome extends HttpServlet {
 
     public void doPost(HttpServletRequest request,
                        HttpServletResponse response)
-            throws ServletException, IOException {
+            throws IOException {
 
         String owned_cards_text = request.getParameter("owned_cards_text");
         String selected_expansion = request.getParameter("selected_expansion");
 
+        List<String> card_name_parameters = Collections.list(request.getParameterNames());
+        card_name_parameters.remove("owned_cards_text");
+        card_name_parameters.remove("selected_expansion");
+        for(int i = 0; i < card_name_parameters.size(); i++){
+            if(request.getParameter(card_name_parameters.get(i)) == null | request.getParameter(card_name_parameters.get(i)).equals("")){
+                card_name_parameters.remove(i);
+                i -= 1;
+            }
+        }
+
+        response.setContentType("text/html");
+        PrintWriter pw = response.getWriter();
+
+
+        pw.println("<!DOCTYPE html>");
+        pw.println("<html lang=\"en\">");
+        pw.println("<head>");
+        pw.println("<style>");
+
+        pw.println("td {\n" +
+                "text-align: center;\n" +
+                "vertical-align: middle;\n" +
+                "}");
+
+        pw.println("</style>");
+        pw.println("    <meta charset=\"UTF-8\">");
+        pw.println("    <title>SV_Collection_Tracker</title>");
+        pw.println("</head>");
+        pw.println("<body>");
+
+
+
         List<Owned_Cards> imported_owned_cards = Owned_Cards_Parser.importOwned_Cards_List(owned_cards_text);
 
-        //try {
-            if (selected_expansion == null) {
-                for (int i = 0; i < imported_owned_cards.size(); i++) {
-                    if (request.getParameter(imported_owned_cards.get(i).getName() + "|Normal_Count") != null) {
-                        int card_count;
-                        if(request.getParameter(imported_owned_cards.get(i).getName() + "|Normal_Count").equals("")){
-                            card_count = 0;
-                        }else{
-                            card_count = Integer.valueOf(request.getParameter(imported_owned_cards.get(i).getName() + "|Normal_Count"));
-                        }
-                        imported_owned_cards.set(i, new Owned_Cards(imported_owned_cards.get(i).getName(), imported_owned_cards.get(i).getExpansion(),
-                                imported_owned_cards.get(i).getRarity(), imported_owned_cards.get(i).getBase_id(),
-                                card_count + imported_owned_cards.get(i).getNormal(), imported_owned_cards.get(i).getAnimated()));
-                    }
-                    if (request.getParameter(imported_owned_cards.get(i).getName() + "|Animated_Count") != null) {
-                            int card_count;
-                            if(request.getParameter(imported_owned_cards.get(i).getName() + "|Animated_Count").equals("")){
-                                card_count = 0;
-                            }else{
-                                card_count = Integer.valueOf(request.getParameter(imported_owned_cards.get(i).getName() + "|Animated_Count"));
+        String card_name_for_exception_list = "";
+        String expansion_getter = "";
+        List<String> cards_updated_list = new ArrayList<>();
+        List<String> cards_not_updated_list = new ArrayList<>();
+
+        if(selected_expansion == null) {
+            for (String card_name_parameter : card_name_parameters) {
+                try {
+
+                    if (card_name_parameter.contains("|Normal_Count")) {
+
+                        card_name_for_exception_list = card_name_parameter;
+                        int inputted_card_count = Integer.valueOf(request.getParameter(card_name_parameter));
+                        String card_name = card_name_parameter.replace("|Normal_Count", "");
+                        cards_updated_list.add(card_name);
+
+
+                        for (int i = 0; i < imported_owned_cards.size(); i++) {
+                            if (imported_owned_cards.get(i).getName().equals(card_name)) {
+                                imported_owned_cards.set(i, new Owned_Cards(card_name, imported_owned_cards.get(i).getExpansion(),
+                                        imported_owned_cards.get(i).getRarity(), imported_owned_cards.get(i).getBase_id(),
+                                        inputted_card_count + imported_owned_cards.get(i).getNormal(), imported_owned_cards.get(i).getAnimated()));
+                                expansion_getter = imported_owned_cards.get(i).getExpansion();
                             }
-                        imported_owned_cards.set(i, new Owned_Cards(imported_owned_cards.get(i).getName(), imported_owned_cards.get(i).getExpansion(),
-                                imported_owned_cards.get(i).getRarity(), imported_owned_cards.get(i).getBase_id(),
-                                imported_owned_cards.get(i).getNormal(), card_count + imported_owned_cards.get(i).getAnimated()));
+                        }
+
+                    } else if (card_name_parameter.contains("|Animated_Count")) {
+
+                        card_name_for_exception_list = card_name_parameter;
+                        int inputted_card_count = Integer.valueOf(request.getParameter(card_name_parameter));
+                        String card_name = card_name_parameter.replace("|Animated_Count", "");
+                        cards_updated_list.add(card_name);
+
+                        for (int i = 0; i < imported_owned_cards.size(); i++) {
+                            if (imported_owned_cards.get(i).getName().equals(card_name)) {
+                                imported_owned_cards.set(i, new Owned_Cards(card_name, imported_owned_cards.get(i).getExpansion(),
+                                        imported_owned_cards.get(i).getRarity(), imported_owned_cards.get(i).getBase_id(),
+                                        imported_owned_cards.get(i).getNormal(), inputted_card_count + imported_owned_cards.get(i).getAnimated()));
+                                    expansion_getter = imported_owned_cards.get(i).getExpansion();
+                            }
+                        }
+                    }
+                }catch (NumberFormatException e) {
+                    cards_not_updated_list.add(card_name_for_exception_list);
+                }
+            }
+            if(!card_name_parameters.isEmpty() & cards_not_updated_list.isEmpty()){
+                pw.println("<B><center>Status:</B> Card count update for " + expansion_getter + " was a success!</center>");
+                pw.print("<B><center>Cards Updated (" + cards_updated_list.size() + ") :</B> <font color=\"green\">");
+                for(int i = 0; i < cards_updated_list.size(); i++){
+                    if(i < cards_updated_list.size() - 1) {
+                        pw.print(cards_updated_list.get(i) + ", ");
+                    }else{
+                        pw.print(cards_updated_list.get(i) + "</font></center>");
+                    }
+                }
+            }else if(!card_name_parameters.isEmpty() & !cards_not_updated_list.isEmpty()){
+                pw.print("<B><center>Status:</B> Invalid character inputted for (" + cards_not_updated_list.size() +") card(s): <font color=\"red\"><B>");
+                for(int i = 0; i < cards_not_updated_list.size(); i++){
+                    if(i < cards_not_updated_list.size() - 1) {
+                        pw.print(cards_not_updated_list.get(i) + ", ");
+                    }else{
+                        pw.println(cards_not_updated_list.get(i) + "</font></B></center>");
+                    }
+                }
+                pw.println("<center>Please review <B>" + expansion_getter + "</B> again.</center>");
+                pw.print("<B><center>Cards Updated (" + cards_updated_list.size() + ") :</B> <font color=\"green\">");
+                for(int i = 0; i < cards_updated_list.size(); i++){
+                    if(i < cards_updated_list.size() - 1) {
+                        pw.print(cards_updated_list.get(i) + ", ");
+                    }else{
+                        pw.println(cards_updated_list.get(i) + "</font></center>");
                     }
                 }
             }
-        //}catch(NumberFormatException e){}
+        }
+
 
         List<String> expansion_name = Expansion_Parser.get_expansion_lists("name");
 
@@ -113,26 +205,10 @@ public class Welcome extends HttpServlet {
 
         }
 
-        response.setContentType("text/html");
-        PrintWriter pw = response.getWriter();
 
-        pw.println("<!DOCTYPE html>");
-        pw.println("<html lang=\"en\">");
-        pw.println("<head>");
-        pw.println("<style>");
 
-        pw.println("td {\n" +
-                "text-align: center;\n" +
-                "vertical-align: middle;\n" +
-                "}");
-
-        pw.println("</style>");
-        pw.println("    <meta charset=\"UTF-8\">");
-        pw.println("    <title>SV_Collection_Tracker</title>");
-        pw.println("</head>");
-        pw.println("<body>");
         pw.println("<center>");
-        pw.println("    <form name=\"Welcome\"");
+        pw.println("    <br><br><form name=\"Welcome\"");
         pw.println("          method=\"post\"");
         pw.println("          action=\"http://localhost:8080/SV_Collection_Tracker/Welcome\">");
         pw.println("        <table>");
