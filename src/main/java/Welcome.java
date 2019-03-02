@@ -25,42 +25,49 @@ public class Welcome extends HttpServlet {
                        HttpServletResponse response)
             throws IOException {
 
-
+        try {
             List<Owned_Cards> owned_cards = Cards_List_Methods.makeList_of_Owned_Cards();
 
-        response.setContentType("text/html");
-        PrintWriter pw = response.getWriter();
 
-        pw.println("<!DOCTYPE html>");
-        pw.println("<html lang=\"en\">");
-        pw.println("<head>");
-        pw.println("<style>");
+            response.setContentType("text/html");
+            PrintWriter pw = response.getWriter();
 
-        pw.println("td {\n" +
-                "text-align: center;\n" +
-                "vertical-align: middle;\n" +
-                "}");
+            pw.println("<!DOCTYPE html>");
+            pw.println("<html lang=\"en\">");
+            pw.println("<head>");
+            pw.println("<style>");
 
-        pw.println("</style>");
-        pw.println("    <meta charset=\"UTF-8\">");
-        pw.println("    <title>SV_Collection_Tracker: Welcome</title>");
-        pw.println("</head>");
-        pw.println("<body>");
-        pw.println("<center>");
-        pw.println("    <form name=\"Welcome\"");
-        pw.println("          method=\"post\"");
-        pw.println("          action=\"http://localhost:8080/SV_Collection_Tracker/Welcome\">");
-        pw.println("        <table>");
-        pw.println("            <tr>");
-        pw.println("                <td><B>Copy Paste File Here:</B></td>");
-        pw.println("                <td><textarea name=\"owned_cards_text\" rows=\"10\" cols=\"30\">" +   Owned_Cards_Parser.getOwned_Cards_Text(owned_cards)  + "</textarea></td>");
-        pw.println("            </tr>");
-        pw.println("        </table>");
-        pw.println("        <input type=\"submit\" value=\"Import\">");
-        pw.println("    </form>");
-        pw.println("</center>");
-        pw.println("</body>");
-        pw.println("</html>");
+            pw.println("td {\n" +
+                    "text-align: center;\n" +
+                    "vertical-align: middle;\n" +
+                    "}");
+
+            pw.println("</style>");
+            pw.println("    <meta charset=\"UTF-8\">");
+            pw.println("    <title>SV_Collection_Tracker: Welcome</title>");
+            pw.println("</head>");
+            pw.println("<body>");
+            pw.println("<center>");
+            pw.println("    <form name=\"Welcome\"");
+            pw.println("          method=\"post\"");
+            pw.println("          action=\"http://localhost:8080/SV_Collection_Tracker/Welcome\">");
+            pw.println("        <table>");
+            pw.println("            <tr>");
+            pw.println("                <td><B>Paste saved text here:<br>It is recommended<br> to make read only .txt file<br> backups with timestamps.</B></td>");
+            pw.println("                <td><textarea name=\"owned_cards_text\" rows=\"10\" cols=\"30\">" + Owned_Cards_Parser.getOwned_Cards_Text(owned_cards) + "</textarea></td>");
+            pw.println("            </tr>");
+            pw.println("        </table>");
+            pw.println("        <input type=\"submit\" value=\"Import\">");
+            pw.println("    </form>");
+            pw.println("</center>");
+            pw.println("</body>");
+            pw.println("</html>");
+        }catch(Exception e){
+            response.setContentType("text/html");
+            PrintWriter pw = response.getWriter();
+
+            pw.println("<!DOCTYPE html><html lang=\"en\"><head></head><body>Please review the Expansions.txt or ShadowOut.txt files in the resources folder.</body></html>");
+        }
     }
 
 
@@ -103,8 +110,11 @@ public class Welcome extends HttpServlet {
         pw.println("<body>");
 
 
+        List<Owned_Cards> imported_owned_cards = new ArrayList<>();
 
-        List<Owned_Cards> imported_owned_cards = Owned_Cards_Parser.importOwned_Cards_List(owned_cards_text);
+        try {
+
+        imported_owned_cards = Owned_Cards_Parser.importOwned_Cards_List(owned_cards_text);
 
         String card_name_for_exception_list = "";
         String expansion_getter = "";
@@ -181,6 +191,16 @@ public class Welcome extends HttpServlet {
                     }
                 }
             }
+        }else if(!card_name_parameters.isEmpty()){
+            pw.println("<center><B>Warning:</B> Input detected for " + selected_expansion + " but not updated! Click on the update button to update.</center>");
+            pw.print("<center>The following counts were not imported (" + card_name_parameters.size() + ") : <B><font color=\"red\">");
+            for(int i = 0; i < card_name_parameters.size(); i++){
+                if(i < card_name_parameters.size() - 1){
+                    pw.print(card_name_parameters.get(i) + ":" + request.getParameter(card_name_parameters.get(i)) + ", ");
+                }else{
+                    pw.print(card_name_parameters.get(i) + ":" + request.getParameter(card_name_parameters.get(i)) + "</B></font></center>");
+                }
+            }
         }
 
 
@@ -213,8 +233,8 @@ public class Welcome extends HttpServlet {
         pw.println("          action=\"http://localhost:8080/SV_Collection_Tracker/Welcome\">");
         pw.println("        <table>");
         pw.println("            <tr>");
-        pw.println("                <td><B>Copy Paste File Here:</B></td>");
-        pw.println("                <td><textarea name=\"owned_cards_text\" rows=\"10\" cols=\"30\">" +   Owned_Cards_Parser.getOwned_Cards_Text(imported_owned_cards)  + "</textarea></td>");
+        pw.println("                <td><B>Copy text here:<br>It is recommended<br> to make .txt file<br> backups with timestamps.</B></td>");
+        pw.println("                <td><textarea readonly name=\"owned_cards_text\" rows=\"10\" cols=\"30\">" +   Owned_Cards_Parser.getOwned_Cards_Text(imported_owned_cards)  + "</textarea></td>");
         pw.println("                <td><table><tr><td><B>Total Required Vials</B></td></tr><tr><td>" + comma_sep.format(required_grand_total_vials) + "</td></tr></table></td>");
         pw.println("                <td><table><tr><td><B>Extras Vials (Liquefy Animated)</B></td></tr><tr><td>" + comma_sep.format(extras_liquefy_animated_grand_total_vials) + "</td></tr></table></td>");
         pw.println("                <td><table><tr><td><B>Extras Vials (Keep Animated)</B></td></tr><tr><td>" + comma_sep.format(extras_keep_animated_grand_total_vials) + "</td></tr></table></td>");
@@ -319,6 +339,9 @@ public class Welcome extends HttpServlet {
         }
 
         pw.println("</form>");
+        }catch(Exception e){
+            pw.println("Import unsuccessful. Please review the txt file or use a backup if possible.");
+        }
         pw.println("</body>");
         pw.println("</html>");
 
