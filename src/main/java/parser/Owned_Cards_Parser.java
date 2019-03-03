@@ -1,5 +1,6 @@
 package parser;
 
+import cards.Negative_Owned_Cards_Exception;
 import cards.Owned_Cards;
 import expansions_algorithms.Cards_List_Methods;
 
@@ -22,7 +23,7 @@ public class Owned_Cards_Parser {
     }
 
 
-    public static List<Owned_Cards> importOwned_Cards_List (String owned_cards_text)throws Parsed_Row_Exception{
+    public static List<Owned_Cards> importOwned_Cards_List (String owned_cards_text)throws Parsed_Row_Exception,Negative_Owned_Cards_Exception{
 
         List<Owned_Cards> new_owned_cards = Cards_List_Methods.makeList_of_Owned_Cards();
 
@@ -50,8 +51,8 @@ public class Owned_Cards_Parser {
                     }
                 }
             }
-        }catch(NumberFormatException e){
-            throw  new Parsed_Row_Exception(exception_row_index, parsed_rows.get(exception_row_index - 1));
+        }catch(NumberFormatException | Negative_Owned_Cards_Exception e){
+            throw new Parsed_Row_Exception(exception_row_index, parsed_rows.get(exception_row_index - 1));
         }catch(Exception e){
             throw new Parsed_Row_Exception(exception_row_index, exception_parsed_row);
         }

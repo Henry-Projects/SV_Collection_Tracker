@@ -11,6 +11,6 @@ public class Parsed_Row_Exception extends Exception {
     }
 
     public String toString() {
-        return String.valueOf(this.row) + ": " + parsed_row;
+        return this.row + ": " + parsed_row;
     }
 }

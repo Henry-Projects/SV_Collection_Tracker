@@ -13,10 +13,15 @@ public class Owned_Cards extends Available_Cards{
         this.animated = 0;
     }
 
-    public Owned_Cards(String name, String expansion, Rarity type, String base_id, int normal, int animated) {
+    public Owned_Cards(String name, String expansion, Rarity type, String base_id, int normal, int animated)throws Negative_Owned_Cards_Exception {
         super(name, expansion, type, base_id);
-        this.normal = normal;
-        this.animated = animated;
+
+        if(normal < 0 | animated < 0){
+            throw new Negative_Owned_Cards_Exception(name);
+        }else{
+            this.normal = normal;
+            this.animated = animated;
+        }
     }
 
     public int getNormal() { return this.normal;}
@@ -34,8 +39,6 @@ public class Owned_Cards extends Available_Cards{
     return completed;
 
     }
-
-    public int getVial_value() { return this.normal * super.type.getLiquefyNormal_value() + this.animated * super.type.getLiquefyAnimated_value();}
 
     public int getExtras_LiquefyAnimated_value() {
 
