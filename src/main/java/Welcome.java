@@ -272,10 +272,10 @@ public class Welcome extends HttpServlet {
             pw.println("                <td><table><tr><td><B>Extras Vials (Keep Animated)</B></td></tr><tr><td>" + comma_sep.format(extras_keep_animated_grand_total_vials) + "</td></tr></table></td>");
             pw.println("            </tr>");
             pw.println("        </table>");
-            pw.println("        <input type=\"submit\" value=\"Update\">");
+            pw.println("        <input type=\"submit\" value=\"Update\" style=\"height:30px; width:70px\">");
             pw.println("</center>");
 
-
+            pw.println("<br><br>");
             pw.println("<center>");
             pw.println("    <table>");
             pw.println("        <tr>");
@@ -338,13 +338,13 @@ public class Welcome extends HttpServlet {
             if (selected_expansion == null) {
                 pw.println("<br><br><B><center>Select an expansion!</center></B>");
             } else {
-                pw.println("<B>" + selected_expansion + "</B>:");
+                pw.println("<br><br><B><center>" + selected_expansion + "</center></B>:");
 
                 List<Owned_Cards> sorted_cards = imported_owned_cards.stream()
                         .sorted((Owned_Cards card1, Owned_Cards card2) -> card1.getName().compareTo(card2.getName()))
                         .collect(Collectors.toList());
 
-                pw.println("<table><tr>");
+                pw.println("<center><table><tr>");
 
                 for (Rarity rarity : Rarity.values()) {
                     pw.println("<td style=\"vertical-align:top\">");
@@ -367,7 +367,7 @@ public class Welcome extends HttpServlet {
                     pw.println("</table>");
                     pw.println("</td>");
                 }
-                pw.println("</tr></table>");
+                pw.println("</tr></table></center>");
             }
 
             pw.println("</form>");
