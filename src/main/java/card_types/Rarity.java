@@ -18,9 +18,11 @@ public enum Rarity {
     public int getLiquefyNormal_value() {
         return liquefy_value;
     }
+
     public int getCreate_value() {
         return create_value;
     }
+
     public int getLiquefyAnimated_value() { return liquefyAnimated_value;}
 
 }

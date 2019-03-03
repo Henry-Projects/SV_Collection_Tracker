@@ -16,8 +16,6 @@ public class Available_Cards {
         this.base_id = base_id;
     }
 
-    public Available_Cards(){ }
-
     public String getName(){
         return this.name;
     }
@@ -26,10 +24,7 @@ public class Available_Cards {
         return this.expansion;
     }
 
-    public String getRarity_String() {return this.type.name(); }
-
     public Rarity getRarity() {return this.type;}
 
     public String getBase_id() {return this.base_id;}
-
 }

@@ -39,7 +39,7 @@ public class Cards_List_Methods {
         double incomplete_count = 0.0;
 
         for(Owned_Cards card:owned_cards){
-            if(card.expansion.equals(expansion) & card.getRarity_String().equals(rarity.name())){
+            if(card.expansion.equals(expansion) & card.getRarity() == rarity){
                 if(card.is_Completed()) {
                     completed_count++;
                 }else{
@@ -74,7 +74,7 @@ public class Cards_List_Methods {
         int required_vials = 0;
 
             for (Owned_Cards card : owned_cards) {
-                if (card.expansion.equals(expansion) & card.getRarity_String().equals(rarity.name())) {
+                if (card.expansion.equals(expansion) & card.getRarity() == rarity) {
                             required_vials += card.getVials_required();
 
                 }
