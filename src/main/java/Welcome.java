@@ -19,13 +19,26 @@ import parser.Owned_Cards_Parser;
 import parser.Parsed_Row_Exception;
 
 @WebServlet(urlPatterns = { "/Welcome" })
+
+
+/*This servlet has a doGet and doPost method.
+The end user will first see the page generated from doGet.
+Submitting the form from that page will redirect them to the page generated from doPost.
+Submitting the form from the doPost page will redirect them to
+that same page again resulting in a loop with the doPost page.*/
+
 public class Welcome extends HttpServlet {
 
-    public void doGet(HttpServletRequest request,
-                       HttpServletResponse response)
-            throws IOException {
+
+    /*This method generates the first page the end user sees after going to localhost:8080/SV_Collection_Tracker/Welcome.
+    It has a pre-filled text area with all the available cards with quantity 0 for both normal and animated.
+    The end user can overwrite that text area with their saved collection (in the same format) if they are not a new user.
+    The import button will send the text as a parameter to the second method doPost in this class.*/
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         try {
+
+            //This makes a list of available cards originating from the ShadowOut.txt in the resources folder.
             List<Owned_Cards> owned_cards = Cards_List_Methods.makeList_of_Owned_Cards();
 
 
@@ -51,6 +64,7 @@ public class Welcome extends HttpServlet {
             pw.println("    <form name=\"Welcome\"");
             pw.println("          method=\"post\"");
             pw.println("          action=\"http://localhost:8080/SV_Collection_Tracker/Welcome\">");
+            //This creates one table with one row with two cells.
             pw.println("        <table>");
             pw.println("            <tr>");
             pw.println("                <td><B>Paste saved text here:<br>It is recommended<br> to make read only .txt file<br> backups with timestamps.</B></td>");
@@ -62,6 +76,8 @@ public class Welcome extends HttpServlet {
             pw.println("</center>");
             pw.println("</body>");
             pw.println("</html>");
+
+            //If any exceptions is caught when generating the text for the text area, it will print the below statement.
         }catch(Exception e){
             response.setContentType("text/html");
             PrintWriter pw = response.getWriter();
@@ -72,10 +88,16 @@ public class Welcome extends HttpServlet {
 
 
 
-    public void doPost(HttpServletRequest request,
-                       HttpServletResponse response)
-            throws IOException {
+    /*This method generates the second page after the form from the first page above is submitted.
+    It has the same pre-filled text area from the first page in addition to statistics regarding the cards from the text area.
+    The text area this time is read only to prevent corruption. The end user can copy and save the text when they are done with this app.
+    The possible parameters that can be sent from here are
+    the text from the text area, the selected expansion, and the card count for normal and animated
+    Submitting the form here will redirect the end user to this page again with the new parameters being used.*/
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
+
+        //Get the three types of parameters from the previous submitted form
         String owned_cards_text = request.getParameter("owned_cards_text");
         String selected_expansion = request.getParameter("selected_expansion");
 
@@ -88,6 +110,7 @@ public class Welcome extends HttpServlet {
                 i -= 1;
             }
         }
+
 
         response.setContentType("text/html");
         PrintWriter pw = response.getWriter();
@@ -112,10 +135,14 @@ public class Welcome extends HttpServlet {
 
         List<Owned_Cards> imported_owned_cards;
 
+        //This try catch handles possible exceptions resulting from importing the text from the text area.
+        //If any exceptions is caught, it will redirect to a page listing only the possible cause of the exception.
         try {
 
             imported_owned_cards = Owned_Cards_Parser.importOwned_Cards_List(owned_cards_text);
 
+            //This group of variables is for the inner try catch that handles the possible exceptions
+            //resulting from the card count parameters
             String card_name_for_exception_list = "";
             String card_param_name_for_exception_list = "";
             String rarity_string_for_exception_list="";
@@ -127,7 +154,11 @@ public class Welcome extends HttpServlet {
             List<String> rarity_string_updated = new ArrayList<>();
             List<String> rarity_string_not_updated = new ArrayList<>();
 
+            //This if then statement is required to differentiate between submitting the form through the update button or one of the expansion buttons.
             if (selected_expansion == null) {
+                //This loops through the card count parameters to update the list of owned cards. If an exception is caught,
+                //that particular card will not be updated. The loop will continue to loop through the remaining cards.
+                //A list of cards are updated and cards that are not updated due to an exception will be displayed afterwards.
                 for (String card_name_parameter : card_name_parameters) {
                     try {
 
@@ -185,11 +216,13 @@ public class Welcome extends HttpServlet {
                         }
                     } catch (NumberFormatException | Negative_Owned_Cards_Exception e) {
 
+                        //These methods keep track of cards that are not updated due to an exception.
                         cards_param_not_updated_list.add(card_param_name_for_exception_list);
                         cards_not_updated_list.add(card_name_for_exception_list);
                         rarity_string_not_updated.add(rarity_string_for_exception_list);
                     }
                 }
+                //If there were card count parameters and no exceptions were thrown, print the following status at the top.
                 if (!card_name_parameters.isEmpty() & cards_not_updated_list.isEmpty()) {
                     pw.println("<B><center>Status:</B> Card count update for " + expansion_getter + " was a success!</center>");
                     pw.print("<B><center>Cards Updated (" + cards_updated_list.size() + ") :</B> <font color=\"green\">");
@@ -200,6 +233,7 @@ public class Welcome extends HttpServlet {
                             pw.print(cards_updated_list.get(i) + rarity_string_updated.get(i) + request.getParameter(cards_param_updated_list.get(i)) + "</font></center>");
                         }
                     }
+                    //If there were card count parameters and exceptions were thrown, print the following status at the top.
                 } else if (!card_name_parameters.isEmpty() & !cards_not_updated_list.isEmpty()) {
                     pw.print("<B><center>Status:</B> Invalid character inputted for (" + cards_not_updated_list.size() + ") card(s): <font color=\"red\"><B>");
                     for (int i = 0; i < cards_not_updated_list.size(); i++) {
@@ -212,6 +246,7 @@ public class Welcome extends HttpServlet {
                     pw.println("<center>Please review <B>" + expansion_getter + "</B> again.</center>");
                     pw.print("<B><center>Cards Updated (" + cards_updated_list.size() + ") :</B> <font color=\"green\">");
 
+                    //There can be card count parameters of "" but no updated cards.
                     if(cards_updated_list.isEmpty()){
                         pw.println("</font></center>");
                     }
@@ -224,6 +259,7 @@ public class Welcome extends HttpServlet {
                         }
                     }
                 }
+             //If there were card count parameters but one of the expansion buttons was selected instead of the update button, print the following.
             } else if (!card_name_parameters.isEmpty()) {
                 pw.println("<center><B>Warning:</B> Input detected for " + selected_expansion + " but not updated! Click on the update button to update.</center>");
                 pw.print("<center>The following counts were not imported (" + card_name_parameters.size() + ") : <B><font color=\"red\">");
@@ -236,7 +272,8 @@ public class Welcome extends HttpServlet {
                 }
             }
 
-
+            //This next block creates the statistics showing which pack to buy and the required vials to complete the expansion.
+            //It also creates the statistics to the right of the text area summarizing the various grand total vials.
             List<String> expansion_name = Expansion_Parser.get_expansion_lists("name");
 
             DecimalFormat two_dec = new DecimalFormat("#,###.00");
@@ -340,6 +377,9 @@ public class Welcome extends HttpServlet {
             } else {
                 pw.println("<br><br><B><center>" + selected_expansion + "</center></B>:");
 
+
+                //This next block sorts the cards that were imported from the text area and list the text fields for
+                //inputting the card count.
                 List<Owned_Cards> sorted_cards = imported_owned_cards.stream()
                         .sorted((Owned_Cards card1, Owned_Cards card2) -> card1.getName().compareTo(card2.getName()))
                         .collect(Collectors.toList());
@@ -371,6 +411,10 @@ public class Welcome extends HttpServlet {
             }
 
             pw.println("</form>");
+
+            //If any exceptions are caught while importing the text from the text area from the doGet page,
+            //a new page will be generated instead
+            //that attempts to show precisely where the exception occurred from the text.
         }catch(Parsed_Row_Exception e) {
             pw.println("Import unsuccessful. Please review row " + e + ". Format should be name|non negative integer|non negative integer. Also remove any unnecessary empty lines or use a backup if possible.");
         }catch(Negative_Owned_Cards_Exception e){
