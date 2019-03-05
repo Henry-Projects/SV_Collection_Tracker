@@ -2,10 +2,71 @@ package expansions_algorithms;
 
 import card_types.Rarity;
 
+import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
+
 public class Cards_Probability {
 
-    public final static double normal_draw = .92;
-    public final static double animated_draw = .08;
+    public final static double normal_draw = 0.92;
+    public final static double animated_draw = 0.08;
+
+    public static BigDecimal getDraw_probability(int draw_index, Rarity rarity){
+
+        BigDecimal draw_probability = new BigDecimal(0.0, MathContext.DECIMAL128);
+
+        switch(rarity){
+
+            case BRONZE:
+                if(draw_index <= 7){
+                    draw_probability = new BigDecimal(0.675, MathContext.DECIMAL128);
+                }else{
+                    draw_probability = new BigDecimal(0.0, MathContext.DECIMAL128);
+                }
+                break;
+
+            case SILVER:
+                if(draw_index <= 7){
+                    draw_probability = new BigDecimal(0.25, MathContext.DECIMAL128);
+                }else{
+                    draw_probability = new BigDecimal(0.925, MathContext.DECIMAL128);
+                }
+                break;
+
+            case GOLD:
+                if(draw_index <= 7){
+                    draw_probability = new BigDecimal(0.06, MathContext.DECIMAL128);
+                }else{
+                    draw_probability = new BigDecimal(0.06, MathContext.DECIMAL128);
+                }
+                break;
+
+            case LEGENDARY:
+                if(draw_index <= 7){
+                    draw_probability = new BigDecimal(0.015, MathContext.DECIMAL128);
+                }else{
+                    draw_probability = new BigDecimal(0.015, MathContext.DECIMAL128);
+                }
+                break;
+        }
+
+        return draw_probability;
+    }
+
+    public static BigDecimal nCr(final int n, final int k){
+
+        BigDecimal result = new BigDecimal(1.0, MathContext.DECIMAL128);
+
+        for( int i = 0; i < k; i++){
+
+            result = result.multiply((BigDecimal.valueOf(n).subtract(BigDecimal.valueOf(i)))).divide(BigDecimal.valueOf(i).add(BigDecimal.valueOf(1.0)), MathContext.DECIMAL128);
+
+            //result = result.multiply((BigDecimal.valueOf(n-i)).divide(BigDecimal.valueOf((i+1)), RoundingMode.HALF_UP));
+
+        }
+
+        return result;
+    }
 
     public static double getExpected_Draws(Rarity rarity) {
 
