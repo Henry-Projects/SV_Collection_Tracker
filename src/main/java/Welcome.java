@@ -4,6 +4,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import java.math.BigDecimal;
+import java.math.MathContext;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -281,14 +283,14 @@ public class Welcome extends HttpServlet {
 
             DecimalFormat comma_sep = new DecimalFormat("#,###");
 
-            double max_expected_vials = 0.0;
+            BigDecimal max_expected_vials = new BigDecimal(0.0, MathContext.DECIMAL128);
             int required_grand_total_vials = 0;
             int extras_liquefy_animated_grand_total_vials = 0;
             int extras_keep_animated_grand_total_vials = 0;
 
             for (String expansion : expansion_name) {
 
-                max_expected_vials = Math.max(max_expected_vials, Cards_List_Methods.getExpected_Vials_Total(imported_owned_cards, expansion));
+                max_expected_vials = max_expected_vials.max(Cards_List_Methods.getExpected_Vials_Total(imported_owned_cards, expansion));
                 required_grand_total_vials += Cards_List_Methods.getRequired_Vials_Total(imported_owned_cards, expansion);
                 extras_liquefy_animated_grand_total_vials += Cards_List_Methods.getExtras_LiquefyAnimated_Vials_Total(imported_owned_cards, expansion);
                 extras_keep_animated_grand_total_vials += Cards_List_Methods.getExtras_KeepAnimated_Vials_Total(imported_owned_cards, expansion);
@@ -338,7 +340,7 @@ public class Welcome extends HttpServlet {
                 pw.println("     <td>");
                 pw.println("        <table>");
 
-                if (Cards_List_Methods.getExpected_Vials_Total(imported_owned_cards, expansion) == max_expected_vials) {
+                if (Cards_List_Methods.getExpected_Vials_Total(imported_owned_cards, expansion).equals(max_expected_vials)) {
                     pw.println("            <tr><td style=\"color:blue\"><b><input type=submit name=\"selected_expansion\" value=\"" + expansion + "\" style=\"color:white;background:green\"></b></td></tr>");
                 } else {
                     pw.println("            <tr><td><b><input type=submit name=\"selected_expansion\" value=\"" + expansion + "\"></b></td></tr>");
@@ -348,7 +350,7 @@ public class Welcome extends HttpServlet {
                     pw.println("            <tr><td>" + two_dec.format(Cards_List_Methods.getExpected_Vials_by_Rarity(imported_owned_cards, expansion, rarity)) + "</td></tr>");
                 }
 
-                if (Cards_List_Methods.getExpected_Vials_Total(imported_owned_cards, expansion) == max_expected_vials) {
+                if (Cards_List_Methods.getExpected_Vials_Total(imported_owned_cards, expansion).equals(max_expected_vials)) {
                     pw.println("            <tr><td style=\"color:blue\"><b>" + two_dec.format(Cards_List_Methods.getExpected_Vials_Total(imported_owned_cards, expansion)) + "</b></td></tr>");
                 } else {
                     pw.println("            <tr><td><b>" + two_dec.format(Cards_List_Methods.getExpected_Vials_Total(imported_owned_cards, expansion)) + "</b></td></tr>");
