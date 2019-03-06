@@ -5,8 +5,6 @@ import card_types.*;
 import parser.Available_Card_Parser;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.math.MathContext;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,13 +36,13 @@ public class Cards_List_Methods {
 
     public static BigDecimal getExpected_Vials_by_Rarity(List<Owned_Cards> owned_cards, String expansion, Rarity rarity){
 
-        BigDecimal expected_vial = new BigDecimal(0.0, MathContext.DECIMAL128);
-        BigDecimal card_count_by_rarity = new BigDecimal(0.0, MathContext.DECIMAL128);
+        BigDecimal expected_vial = BigDecimal.ZERO;
+        BigDecimal card_count_by_rarity = BigDecimal.ZERO;
 
 
         for(Owned_Cards card:owned_cards){
             if(card.getExpansion().equals(expansion) & card.getRarity() == rarity){
-                card_count_by_rarity = card_count_by_rarity.add(BigDecimal.valueOf(1.0));
+                card_count_by_rarity = card_count_by_rarity.add(BigDecimal.ONE);
             }
         }
 
@@ -54,38 +52,17 @@ public class Cards_List_Methods {
             }
         }
 
-
         return expected_vial;
-        /*double completed_count = 0.0;
-        double incomplete_count = 0.0;
-
-        for(Owned_Cards card:owned_cards){
-            if(card.expansion.equals(expansion) & card.getRarity() == rarity){
-                if(card.is_Completed()) {
-                    completed_count++;
-                }else{
-                    incomplete_count++;
-                }
-            }
-        }
-
-        double completed_ratio = completed_count/(completed_count + incomplete_count);
-        double incomplete_ratio = incomplete_count/(completed_count + incomplete_count);
-        double expected_normal_liquefy_value = Cards_Probability.getExpected_Draws(rarity) * Cards_Probability.normal_draw * rarity.getLiquefyNormal_value();
-        double expected_animated_liquefy_value = Cards_Probability.getExpected_Draws(rarity) * Cards_Probability.animated_draw * rarity.getLiquefyAnimated_value();
-        double expected_normal_create_value = Cards_Probability.getExpected_Draws(rarity) * rarity.getCreate_value();
-
-        return ((expected_normal_liquefy_value + expected_animated_liquefy_value) * completed_ratio) +
-                (expected_normal_create_value * incomplete_ratio);*/
     }
 
     public static BigDecimal getExpected_Vials_Total(List<Owned_Cards> owned_cards, String expansion){
 
-        BigDecimal expected_vials = new BigDecimal(0.0, MathContext.DECIMAL128);
+        BigDecimal expected_vials = BigDecimal.ZERO;
 
         for(Rarity rarity:Rarity.values()){
             expected_vials = expected_vials.add(Cards_List_Methods.getExpected_Vials_by_Rarity(owned_cards,expansion,rarity));
         }
+
 
         return expected_vials;
     }

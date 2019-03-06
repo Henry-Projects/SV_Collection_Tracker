@@ -34,18 +34,6 @@ public class Owned_Cards extends Available_Cards{
 
     public int getAnimated() { return this.animated;}
 
-    public boolean is_Completed() {
-
-        boolean completed = false;
-
-        if(this.normal + this.animated >= 3){
-        completed = true;
-    }
-
-    return completed;
-
-    }
-
     public int getExtras_LiquefyAnimated_value() {
 
         int extra_vials = 0;
@@ -110,40 +98,53 @@ public class Owned_Cards extends Available_Cards{
 
         BigDecimal vials_expected = new BigDecimal(0.0, MathContext.DECIMAL128);
 
-        BigDecimal liquefy_expected = BigDecimal.valueOf((Cards_Probability.normal_draw * super.type.getLiquefyNormal_value()) + (Cards_Probability.animated_draw * super.type.getLiquefyAnimated_value()));
+        BigDecimal liquefy_expected = BigDecimal.valueOf((Cards_Probability.normal_draw * super.type.getLiquefyNormal_value()) +
+                (Cards_Probability.animated_draw * super.type.getLiquefyAnimated_value())).setScale(2, RoundingMode.HALF_UP);
         BigDecimal create_expected = BigDecimal.valueOf(super.type.getCreate_value());
 
 
         BigDecimal owned_quantity = new BigDecimal(Math.min(3, this.normal + this.animated));
 
-        for(int i = 1; i <= 8; i++) {
+        if(super.type == Rarity.BRONZE){
+            for (int i = 1; i <= 7; i++){
+                //Combination formula
+                BigDecimal combination = Cards_Probability.nCr(7, i);
+                //(probability of drawing this card/total count of this card's rarity in this expansion)^i
+                BigDecimal draw_true = (Cards_Probability.getDraw_probability(super.type).divide(total_count_by_this_rarity, MathContext.DECIMAL128)).pow(i);
+                //(1-probability of drawing this card/total count of this card's rarity in this expansion)^(8-i)
+                BigDecimal draw_false = (BigDecimal.valueOf(1.0)
+                        .subtract(Cards_Probability.getDraw_probability(super.type).divide(total_count_by_this_rarity, MathContext.DECIMAL128))).pow(7 - i);
+                //MIN(MIN(3-Owned,3),i)
+                BigDecimal expected_create = ((BigDecimal.valueOf(3.0).subtract(owned_quantity)).min(BigDecimal.valueOf(3.0))).min(BigDecimal.valueOf(i));
+                //MIN(8-expected_created,i-expected_created)
+                BigDecimal expected_liquefy = ((BigDecimal.valueOf(7.0).subtract(expected_create)).min(BigDecimal.valueOf(i).subtract(expected_create)));
 
-            BigDecimal combination = Cards_Probability.nCr(8,i);
-            BigDecimal draw_true = (Cards_Probability.getDraw_probability(i, super.type).divide(total_count_by_this_rarity, MathContext.DECIMAL128)).pow(i);
-            BigDecimal draw_false = (BigDecimal.valueOf(1.0)
-                    .subtract(Cards_Probability.getDraw_probability(i, super.type).divide(total_count_by_this_rarity, MathContext.DECIMAL128))).pow(8-i);
-            BigDecimal expected_create = ((BigDecimal.valueOf(3.0).subtract(owned_quantity)).min(BigDecimal.valueOf(i).min(BigDecimal.valueOf(3.0))))
-                    .multiply(create_expected);
-            BigDecimal expected_liquefy = (BigDecimal.valueOf(1.0).subtract((BigDecimal.valueOf(3.0).subtract(owned_quantity)).min(BigDecimal.valueOf(i).min(BigDecimal.valueOf(3.0)))))
-                    .multiply(liquefy_expected);
-
-            vials_expected = vials_expected.add(combination.multiply(draw_true).multiply(draw_false).multiply(expected_create.add(expected_liquefy)));
-
-            if(super.type == Rarity.GOLD){
-                System.out.println("combination: " + combination + " draw_true: " + draw_true + " draw_false: " + draw_false + "expected create: " + expected_create + "expected liquefy" + expected_liquefy);
+                //vials_expected += combination*draw_true*draw_false*(expected_create*create_expected+expected_liquefy*liquefy_expected)
+                vials_expected = vials_expected.add(combination.multiply(draw_true).multiply(draw_false).multiply(((expected_create).multiply(create_expected))
+                        .add(expected_liquefy.multiply(liquefy_expected))));
 
             }
+        }else {
+            for (int i = 1; i <= 8; i++) {
 
-            /*vials_expected = vials_expected.add(Cards_Probability.nCr(8, i)
-                    .multiply((Cards_Probability.getDraw_probability(i, super.type).divide(total_count_by_this_rarity, RoundingMode.HALF_UP)).pow(i))
-                    .multiply((BigDecimal.valueOf(1.0).subtract(Cards_Probability.getDraw_probability(i, super.type).divide(total_count_by_this_rarity, RoundingMode.HALF_UP))).pow(8-i))
-                    .multiply((BigDecimal.valueOf(3.0).subtract(owned_quantity)).min(BigDecimal.valueOf(i)).min(BigDecimal.valueOf(3.0))
-                    .multiply(create_expected)
-                            .add(((BigDecimal.valueOf(i)
-                            .subtract(BigDecimal.valueOf(3.0).subtract(owned_quantity).min(BigDecimal.valueOf(i)).min(BigDecimal.valueOf(3)))).multiply(liquefy_expected)))));
-        */
+                //Combination formula
+                BigDecimal combination = Cards_Probability.nCr(8, i);
+                //(probability of drawing this card/total count of this card's rarity in this expansion)^i
+                BigDecimal draw_true = (Cards_Probability.getDraw_probability(super.type).divide(total_count_by_this_rarity, MathContext.DECIMAL128)).pow(i);
+                //(1-probability of drawing this card/total count of this card's rarity in this expansion)^(8-i)
+                BigDecimal draw_false = (BigDecimal.valueOf(1.0)
+                        .subtract(Cards_Probability.getDraw_probability(super.type).divide(total_count_by_this_rarity, MathContext.DECIMAL128))).pow(8 - i);
+                //MIN(MIN(3-Owned,3),i)
+                BigDecimal expected_create = ((BigDecimal.valueOf(3.0).subtract(owned_quantity)).min(BigDecimal.valueOf(3.0))).min(BigDecimal.valueOf(i));
+                //MIN(8-expected_created,i-expected_created)
+                BigDecimal expected_liquefy = ((BigDecimal.valueOf(8.0).subtract(expected_create)).min(BigDecimal.valueOf(i).subtract(expected_create)));
+
+                //vials_expected += combination*draw_true*draw_false*(expected_create*create_expected+expected_liquefy*liquefy_expected)
+                vials_expected = vials_expected.add(combination.multiply(draw_true).multiply(draw_false).multiply(((expected_create).multiply(create_expected))
+                        .add(expected_liquefy.multiply(liquefy_expected))));
+
+            }
         }
-
-            return vials_expected;
+        return vials_expected;
     }
 }
