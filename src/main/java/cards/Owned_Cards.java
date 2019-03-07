@@ -96,10 +96,10 @@ public class Owned_Cards extends Available_Cards{
 
     public BigDecimal getVials_expected(BigDecimal total_count_by_this_rarity){
 
-        BigDecimal vials_expected = new BigDecimal(0.0, MathContext.DECIMAL128);
+        BigDecimal vials_expected = new BigDecimal(0.0, MathContext.DECIMAL64);
 
         BigDecimal liquefy_expected = BigDecimal.valueOf((Cards_Probability.normal_draw * super.type.getLiquefyNormal_value()) +
-                (Cards_Probability.animated_draw * super.type.getLiquefyAnimated_value())).setScale(2, RoundingMode.HALF_UP);
+                (Cards_Probability.animated_draw * super.type.getLiquefyAnimated_value()));
         BigDecimal create_expected = BigDecimal.valueOf(super.type.getCreate_value());
 
 
@@ -110,10 +110,10 @@ public class Owned_Cards extends Available_Cards{
                 //Combination formula
                 BigDecimal combination = Cards_Probability.nCr(7, i);
                 //(probability of drawing this card/total count of this card's rarity in this expansion)^i
-                BigDecimal draw_true = (Cards_Probability.getDraw_probability(super.type).divide(total_count_by_this_rarity, MathContext.DECIMAL128)).pow(i);
+                BigDecimal draw_true = (Cards_Probability.getDraw_probability(super.type).divide(total_count_by_this_rarity, MathContext.DECIMAL64)).pow(i);
                 //(1-probability of drawing this card/total count of this card's rarity in this expansion)^(8-i)
                 BigDecimal draw_false = (BigDecimal.valueOf(1.0)
-                        .subtract(Cards_Probability.getDraw_probability(super.type).divide(total_count_by_this_rarity, MathContext.DECIMAL128))).pow(7 - i);
+                        .subtract(Cards_Probability.getDraw_probability(super.type).divide(total_count_by_this_rarity, MathContext.DECIMAL64))).pow(7 - i);
                 //MIN(MIN(3-Owned,3),i)
                 BigDecimal expected_create = ((BigDecimal.valueOf(3.0).subtract(owned_quantity)).min(BigDecimal.valueOf(3.0))).min(BigDecimal.valueOf(i));
                 //MIN(8-expected_created,i-expected_created)
@@ -130,10 +130,10 @@ public class Owned_Cards extends Available_Cards{
                 //Combination formula
                 BigDecimal combination = Cards_Probability.nCr(8, i);
                 //(probability of drawing this card/total count of this card's rarity in this expansion)^i
-                BigDecimal draw_true = (Cards_Probability.getDraw_probability(super.type).divide(total_count_by_this_rarity, MathContext.DECIMAL128)).pow(i);
+                BigDecimal draw_true = (Cards_Probability.getDraw_probability(super.type).divide(total_count_by_this_rarity, MathContext.DECIMAL64)).pow(i);
                 //(1-probability of drawing this card/total count of this card's rarity in this expansion)^(8-i)
                 BigDecimal draw_false = (BigDecimal.valueOf(1.0)
-                        .subtract(Cards_Probability.getDraw_probability(super.type).divide(total_count_by_this_rarity, MathContext.DECIMAL128))).pow(8 - i);
+                        .subtract(Cards_Probability.getDraw_probability(super.type).divide(total_count_by_this_rarity, MathContext.DECIMAL64))).pow(8 - i);
                 //MIN(MIN(3-Owned,3),i)
                 BigDecimal expected_create = ((BigDecimal.valueOf(3.0).subtract(owned_quantity)).min(BigDecimal.valueOf(3.0))).min(BigDecimal.valueOf(i));
                 //MIN(8-expected_created,i-expected_created)

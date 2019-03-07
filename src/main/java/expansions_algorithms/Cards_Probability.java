@@ -46,7 +46,7 @@ public class Cards_Probability {
 
         for( int i = 0; i < k; i++){
 
-            result = result.multiply((BigDecimal.valueOf(n).subtract(BigDecimal.valueOf(i)))).divide(BigDecimal.valueOf(i).add(BigDecimal.valueOf(1.0)), MathContext.DECIMAL128);
+            result = result.multiply((BigDecimal.valueOf(n).subtract(BigDecimal.valueOf(i)))).divide(BigDecimal.valueOf(i).add(BigDecimal.valueOf(1.0)), MathContext.DECIMAL64);
 
         }
 
