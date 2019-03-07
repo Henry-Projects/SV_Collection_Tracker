@@ -102,6 +102,7 @@ public class Welcome extends HttpServlet {
         //Get the three types of parameters from the previous submitted form
         String owned_cards_text = request.getParameter("owned_cards_text");
         String selected_expansion = request.getParameter("selected_expansion");
+        //String status_message = request.getParameter("status_message");
 
         List<String> card_name_parameters = Collections.list(request.getParameterNames());
         card_name_parameters.remove("owned_cards_text");
@@ -135,6 +136,7 @@ public class Welcome extends HttpServlet {
         pw.println("<body>");
 
 
+
         List<Owned_Cards> imported_owned_cards;
 
         //This try catch handles possible exceptions resulting from importing the text from the text area.
@@ -156,11 +158,15 @@ public class Welcome extends HttpServlet {
             List<String> rarity_string_updated = new ArrayList<>();
             List<String> rarity_string_not_updated = new ArrayList<>();
 
+
             //This if then statement is required to differentiate between submitting the form through the update button or one of the expansion buttons.
             if (selected_expansion == null) {
                 //This loops through the card count parameters to update the list of owned cards. If an exception is caught,
                 //that particular card will not be updated. The loop will continue to loop through the remaining cards.
                 //A list of cards are updated and cards that are not updated due to an exception will be displayed afterwards.
+
+                //pw.println(status_message);
+
                 for (String card_name_parameter : card_name_parameters) {
                     try {
 
@@ -226,6 +232,20 @@ public class Welcome extends HttpServlet {
                 }
                 //If there were card count parameters and no exceptions were thrown, print the following status at the top.
                 if (!card_name_parameters.isEmpty() & cards_not_updated_list.isEmpty()) {
+
+                    /*pw.println("<input type=\"hidden\" name=\"status_message\" value=\"");
+                    pw.println("<B><center>Status:</B> Card count update for " + expansion_getter + " was a success!</center>");
+                    pw.println("<B><center>Cards Updated (" + cards_updated_list.size() + ") :</B> <font color=&quot;green&quot;>");
+                    for (int i = 0; i < cards_updated_list.size(); i++) {
+                        if (i < cards_updated_list.size() - 1) {
+                            pw.print(cards_updated_list.get(i) + rarity_string_updated.get(i) + request.getParameter(cards_param_updated_list.get(i)) + ", ");
+                        } else {
+                            pw.print(cards_updated_list.get(i) + rarity_string_updated.get(i) + request.getParameter(cards_param_updated_list.get(i)) + "</font></center>");
+                        }
+                    }
+                    pw.println("\">");*/
+
+
                     pw.println("<B><center>Status:</B> Card count update for " + expansion_getter + " was a success!</center>");
                     pw.print("<B><center>Cards Updated (" + cards_updated_list.size() + ") :</B> <font color=\"green\">");
                     for (int i = 0; i < cards_updated_list.size(); i++) {
@@ -273,6 +293,8 @@ public class Welcome extends HttpServlet {
                     }
                 }
             }
+
+
 
             //This next block creates the statistics showing which pack to buy and the required vials to complete the expansion.
             //It also creates the statistics to the right of the text area summarizing the various grand total vials.
