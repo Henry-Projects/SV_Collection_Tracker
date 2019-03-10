@@ -16,9 +16,9 @@ import card_types.Rarity;
 import cards.Negative_Owned_Cards_Exception;
 import cards.Owned_Cards;
 import expansions_algorithms.Cards_List_Methods;
-import parser.Expansion_Parser;
-import parser.Owned_Cards_Parser;
-import parser.Parsed_Row_Exception;
+import parsers.Expansion_Parser;
+import parsers.Owned_Cards_Parser;
+import parsers.Parsed_Row_Exception;
 
 @WebServlet(urlPatterns = { "/Welcome" })
 
@@ -33,6 +33,7 @@ public class Welcome extends HttpServlet {
 
     //list to store the list of owned cards created once in the doGet method
     private List<Owned_Cards> servlet_list = new ArrayList<>();
+    private StringBuilder history = new StringBuilder();
 
     /*This method generates the first page the end user sees after going to localhost:8080/SV_Collection_Tracker/Welcome.
     It has a pre-filled text area with all the available cards with quantity 0 for both normal and animated.
@@ -75,7 +76,7 @@ public class Welcome extends HttpServlet {
             pw.println("                <td><textarea name=\"owned_cards_text\" rows=\"10\" cols=\"30\">" + Owned_Cards_Parser.getOwned_Cards_Text(owned_cards) + "</textarea></td>");
             pw.println("            </tr>");
             pw.println("        </table>");
-            pw.println("        <input type=\"submit\" value=\"Import\">");
+            pw.println("        <input type=\"submit\" value=\"Import\" style=\"height:30px; width:70px; color:white; background: blue\">");
             pw.println("    </form>");
             pw.println("</center>");
             pw.println("</body>");
@@ -109,6 +110,7 @@ public class Welcome extends HttpServlet {
         List<String> card_name_parameters = Collections.list(request.getParameterNames());
         card_name_parameters.remove("owned_cards_text");
         card_name_parameters.remove("selected_expansion");
+        card_name_parameters.remove("history");
         for(int i = 0; i < card_name_parameters.size(); i++){
             if(request.getParameter(card_name_parameters.get(i)) == null | request.getParameter(card_name_parameters.get(i)).equals("")){
                 card_name_parameters.remove(i);
@@ -234,20 +236,6 @@ public class Welcome extends HttpServlet {
                 }
                 //If there were card count parameters and no exceptions were thrown, print the following status at the top.
                 if (!card_name_parameters.isEmpty() & cards_not_updated_list.isEmpty()) {
-
-                    /*pw.println("<input type=\"hidden\" name=\"status_message\" value=\"");
-                    pw.println("<B><center>Status:</B> Card count update for " + expansion_getter + " was a success!</center>");
-                    pw.println("<B><center>Cards Updated (" + cards_updated_list.size() + ") :</B> <font color=&quot;green&quot;>");
-                    for (int i = 0; i < cards_updated_list.size(); i++) {
-                        if (i < cards_updated_list.size() - 1) {
-                            pw.print(cards_updated_list.get(i) + rarity_string_updated.get(i) + request.getParameter(cards_param_updated_list.get(i)) + ", ");
-                        } else {
-                            pw.print(cards_updated_list.get(i) + rarity_string_updated.get(i) + request.getParameter(cards_param_updated_list.get(i)) + "</font></center>");
-                        }
-                    }
-                    pw.println("\">");*/
-
-
                     pw.println("<B><center>Status:</B> Card count update for " + expansion_getter + " was a success!</center>");
                     pw.print("<B><center>Cards Updated (" + cards_updated_list.size() + ") :</B> <font color=\"green\">");
                     for (int i = 0; i < cards_updated_list.size(); i++) {
@@ -285,13 +273,19 @@ public class Welcome extends HttpServlet {
                 }
              //If there were card count parameters but one of the expansion buttons was selected instead of the update button, print the following.
             } else if (!card_name_parameters.isEmpty()) {
-                pw.println("<center><B>Warning:</B> Input detected for " + selected_expansion + " but not updated! Click on the update button to update.</center>");
+                pw.println("<center><B>Warning:</B> Input detected for " + selected_expansion + " but not imported! Click on the update button to import.</center>");
                 pw.print("<center>The following counts were not imported (" + card_name_parameters.size() + ") : <B><font color=\"red\">");
                 for (int i = 0; i < card_name_parameters.size(); i++) {
                     if (i < card_name_parameters.size() - 1) {
-                        pw.print(card_name_parameters.get(i) + ":" + request.getParameter(card_name_parameters.get(i)) + ", ");
+                        pw.print(card_name_parameters.get(i).substring(0, card_name_parameters.get(i).indexOf("|")) +
+                                " - " + card_name_parameters.get(i).substring(card_name_parameters.get(i).indexOf("|") + 1).replace("_"," ") +
+                                ": " + request.getParameter(card_name_parameters.get(i)) +
+                                ", ");
                     } else {
-                        pw.print(card_name_parameters.get(i) + ":" + request.getParameter(card_name_parameters.get(i)) + "</B></font></center>");
+                        pw.print(card_name_parameters.get(i).substring(0, card_name_parameters.get(i).indexOf("|")) +
+                                " - " + card_name_parameters.get(i).substring(card_name_parameters.get(i).indexOf("|") + 1).replace("_"," ") +
+                                ": " + request.getParameter(card_name_parameters.get(i)) +
+                                "</B></font></center>");
                     }
                 }
             }
@@ -333,9 +327,10 @@ public class Welcome extends HttpServlet {
             pw.println("                <td><table><tr><td><B>Total Required Vials</B></td></tr><tr><td>" + comma_sep.format(required_grand_total_vials) + "</td></tr></table></td>");
             pw.println("                <td><table><tr><td><B>Extras Vials (Liquefy Animated)</B></td></tr><tr><td>" + comma_sep.format(extras_liquefy_animated_grand_total_vials) + "</td></tr></table></td>");
             pw.println("                <td><table><tr><td><B>Extras Vials (Keep Animated)</B></td></tr><tr><td>" + comma_sep.format(extras_keep_animated_grand_total_vials) + "</td></tr></table></td>");
+            pw.println("                <td><table><tr><td><B>Session History</B></td></tr><tr><td><textarea readonly name=\"history\" rows=\"10\" cols=\"60\">" + this.history + "</textarea></td></tr></table></td>");
             pw.println("            </tr>");
             pw.println("        </table>");
-            pw.println("        <input type=\"submit\" value=\"Update\" style=\"height:30px; width:70px\">");
+            pw.println("        <input type=\"submit\" value=\"Update\" style=\"height:30px; width:70px; color:white; background: blue\">");
             pw.println("</center>");
 
             pw.println("<br><br>");
@@ -365,7 +360,7 @@ public class Welcome extends HttpServlet {
                 pw.println("        <table>");
 
                 if (Cards_List_Methods.getExpected_Vials_Total(imported_owned_cards, expansion).setScale(2, RoundingMode.HALF_UP).equals(max_expected_vials)) {
-                    pw.println("            <tr><td style=\"color:blue\"><b><input type=submit name=\"selected_expansion\" value=\"" + expansion + "\" style=\"color:white;background:green\"></b></td></tr>");
+                    pw.println("            <tr><td><b><input type=submit name=\"selected_expansion\" value=\"" + expansion + "\" style=\"color:white;background:green\"></b></td></tr>");
                 } else {
                     pw.println("            <tr><td><b><input type=submit name=\"selected_expansion\" value=\"" + expansion + "\"></b></td></tr>");
                 }
@@ -437,6 +432,26 @@ public class Welcome extends HttpServlet {
             }
 
             pw.println("</form>");
+            pw.println("</body>");
+            pw.println("</html>");
+
+            //update servlet list to new owned cards list with new count and history with updated cards
+            this.servlet_list = imported_owned_cards;
+
+            if(!cards_updated_list.isEmpty()){
+                this.history.append(expansion_getter + ":\n");
+
+                for(int i = 0 ; i < cards_updated_list.size(); i++){
+                    if(i < cards_updated_list.size() - 1){
+                        this.history.append("   " + cards_updated_list.get(i) + rarity_string_updated.get(i) + "\n");
+                        this.history.append("     " + request.getParameter(cards_param_updated_list.get(i)) + "\n");
+                    }else{
+                        this.history.append("   " + cards_updated_list.get(i) + rarity_string_updated.get(i) + "\n");
+                        this.history.append("     " + request.getParameter(cards_param_updated_list.get(i)) + "\n\n");
+                    }
+                }
+            }
+
 
             //If any exceptions are caught while importing the text from the text area from the doGet page,
             //a new page will be generated instead
@@ -448,10 +463,5 @@ public class Welcome extends HttpServlet {
         }catch(Exception e){
             pw.println("Import unsuccessful. Please review the txt file for unnecessary empty lines or use a backup if possible.");
         }
-        pw.println("</body>");
-        pw.println("</html>");
-
-        //update servlet list to new owned cards list with new count
-        this.servlet_list = imported_owned_cards;
     }
 }

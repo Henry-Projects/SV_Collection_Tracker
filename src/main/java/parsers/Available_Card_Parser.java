@@ -1,4 +1,4 @@
-package parser;
+package parsers;
 
 import card_types.*;
 import cards.Available_Cards;

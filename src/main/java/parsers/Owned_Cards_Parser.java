@@ -1,4 +1,4 @@
-package parser;
+package parsers;
 
 import cards.Available_Cards;
 import cards.Negative_Owned_Cards_Exception;
