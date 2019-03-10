@@ -2,70 +2,94 @@ package parser;
 
 import card_types.*;
 import cards.Available_Cards;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public class Available_Card_Parser {
 
-    static public List<Available_Cards> parse_shadowout_text_file() {
+    static public List<Available_Cards> getList_of_Available_Cards() {
 
         List<Available_Cards> parsed_cards = new ArrayList<>();
-        String original_parsed_string="";
 
-        try {
-            original_parsed_string = new String(Files.readAllBytes(Paths.get(Available_Card_Parser.class.getResource("/ShadowOut.txt").toURI())), "UTF-8");
-        } catch (Exception e) {
-            System.out.println("Check text file or path for card parsing");
-        }
+        try{
+            URL hp = new URL("https://shadowverse-portal.com/api/v1/cards?format=json&lang=en");
 
-        List<String> parsed_rows = new ArrayList<>(Arrays.asList(original_parsed_string.split("\\r?\\n")));
+            HttpURLConnection hpCon = (HttpURLConnection) hp.openConnection();
 
-        List<String> expansion_id = Expansion_Parser.get_expansion_lists("id");
-        List<String> expansion_name = Expansion_Parser.get_expansion_lists("name");
+            hpCon.setRequestProperty("Accept-Charset", "utf-8");
+            InputStream response = hpCon.getInputStream();
 
-        try {
-            for (String card : parsed_rows) {
+            Scanner scanner = new Scanner(response);
+            String sv_string = scanner.useDelimiter("\\A").next();
 
-            int expansion_index = card.indexOf("|");
-            int rarity_index = card.indexOf("|",expansion_index + 1);
-            int base_id_index = card.indexOf("|",rarity_index + 1);
+            List<String> card_name_list = new ArrayList<>();
+            List<String> card_set_id_list = new ArrayList<>();
+            List<String> rarity_list = new ArrayList<>();
+            List<String> base_card_id = new ArrayList<>();
 
-                if ( expansion_id.contains(card.substring(expansion_index + 1, rarity_index))) {
-                    switch (card.substring(rarity_index + 1, base_id_index)) {
+            JsonElement jelement = new JsonParser().parse(sv_string);
+            JsonObject jobject = jelement.getAsJsonObject();
+            jobject = jobject.getAsJsonObject("data");
+
+            JsonArray jarray = jobject.getAsJsonArray("cards");
+
+            for(JsonElement card_object: jarray){
+                card_name_list.add(card_object.getAsJsonObject().get("card_name").getAsString());
+                card_set_id_list.add(card_object.getAsJsonObject().get("card_set_id").getAsString());
+                rarity_list.add(card_object.getAsJsonObject().get("rarity").getAsString());
+                base_card_id.add(card_object.getAsJsonObject().get("base_card_id").getAsString());
+            }
+
+            List<String> expansion_id = Expansion_Parser.get_expansion_lists("id");
+            List<String> expansion_name = Expansion_Parser.get_expansion_lists("name");
+
+            for(int i = 0; i < card_name_list.size(); i++){
+                if ( expansion_id.contains(card_set_id_list.get(i))) {
+                    switch (rarity_list.get(i)) {
                         case "1":
-                            parsed_cards.add(new Available_Cards(card.substring(0, expansion_index),
-                                    expansion_name.get(expansion_id.indexOf(card.substring(expansion_index + 1, rarity_index))),
+                            parsed_cards.add(new Available_Cards(card_name_list.get(i),
+                                    expansion_name.get(expansion_id.indexOf(card_set_id_list.get(i))),
                                     Rarity.BRONZE,
-                                    card.substring(base_id_index + 1)));
+                                    base_card_id.get(i)));
                             break;
                         case "2":
-                            parsed_cards.add(new Available_Cards(card.substring(0, expansion_index),
-                                    expansion_name.get(expansion_id.indexOf(card.substring(expansion_index + 1, rarity_index))),
+                            parsed_cards.add(new Available_Cards(card_name_list.get(i),
+                                    expansion_name.get(expansion_id.indexOf(card_set_id_list.get(i))),
                                     Rarity.SILVER,
-                                    card.substring(base_id_index + 1)));
+                                    base_card_id.get(i)));
                             break;
                         case "3":
-                            parsed_cards.add(new Available_Cards(card.substring(0, expansion_index),
-                                    expansion_name.get(expansion_id.indexOf(card.substring(expansion_index + 1, rarity_index))),
+                            parsed_cards.add(new Available_Cards(card_name_list.get(i),
+                                    expansion_name.get(expansion_id.indexOf(card_set_id_list.get(i))),
                                     Rarity.GOLD,
-                                    card.substring(base_id_index + 1)));
+                                    base_card_id.get(i)));
                             break;
                         case "4":
-                            parsed_cards.add(new Available_Cards(card.substring(0, expansion_index),
-                                    expansion_name.get(expansion_id.indexOf(card.substring(expansion_index + 1, rarity_index))),
+                            parsed_cards.add(new Available_Cards(card_name_list.get(i),
+                                    expansion_name.get(expansion_id.indexOf(card_set_id_list.get(i))),
                                     Rarity.LEGENDARY,
-                                    card.substring(base_id_index + 1)));
+                                    base_card_id.get(i)));
                             break;
                     }
                 }
             }
-        }catch(Exception e){
-            System.out.println("Check card parsing algorithm");
+        }catch (MalformedURLException e){
+            System.out.println("malformed url exception");
+        }catch (IOException e){
+            System.out.println("IO Exception");
         }
+
         return parsed_cards;
     }
 }
