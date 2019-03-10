@@ -2,37 +2,11 @@ package expansions_algorithms;
 
 import cards.*;
 import card_types.*;
-import parser.Available_Card_Parser;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Cards_List_Methods {
-
-    public static List<Owned_Cards> makeList_of_Owned_Cards(){
-
-        List<Available_Cards> available_cards = Available_Card_Parser.parse_shadowout_text_file();
-
-        for(int card_index = 0; card_index < available_cards.size() - 1; card_index++){
-            for(int card_index2 = card_index + 1; card_index2 < available_cards.size(); card_index2++){
-                if(available_cards.get(card_index).getBase_id().equals(available_cards.get(card_index2).getBase_id())){
-                    available_cards.remove(card_index);
-                    card_index =- 1;
-                    break;
-                }
-            }
-        }
-
-        List<Owned_Cards> owned_cards = new ArrayList<>();
-
-        for(Available_Cards card:available_cards){
-            owned_cards.add(new Owned_Cards(card.name,card.expansion,card.type,card.base_id));
-        }
-
-        return owned_cards;
-    }
-
 
     public static BigDecimal getExpected_Vials_by_Rarity(List<Owned_Cards> owned_cards, String expansion, Rarity rarity){
 

@@ -31,6 +31,8 @@ that same page again resulting in a loop with the doPost page.*/
 
 public class Welcome extends HttpServlet {
 
+    //list to store the list of owned cards created once in the doGet method
+    private List<Owned_Cards> servlet_list = new ArrayList<>();
 
     /*This method generates the first page the end user sees after going to localhost:8080/SV_Collection_Tracker/Welcome.
     It has a pre-filled text area with all the available cards with quantity 0 for both normal and animated.
@@ -40,9 +42,9 @@ public class Welcome extends HttpServlet {
 
         try {
 
-            //This makes a list of available cards originating from the ShadowOut.txt in the resources folder.
-            List<Owned_Cards> owned_cards = Cards_List_Methods.makeList_of_Owned_Cards();
-
+            //This makes a list of available cards originating from the API.
+            List<Owned_Cards> owned_cards = Owned_Cards_Parser.makeList_of_Owned_Cards();
+            this.servlet_list = owned_cards;
 
             response.setContentType("text/html");
             PrintWriter pw = response.getWriter();
@@ -84,7 +86,7 @@ public class Welcome extends HttpServlet {
             response.setContentType("text/html");
             PrintWriter pw = response.getWriter();
 
-            pw.println("<!DOCTYPE html><html lang=\"en\"><head></head><body>Please review the Expansions.txt or ShadowOut.txt files in the resources folder.</body></html>");
+            pw.println("<!DOCTYPE html><html lang=\"en\"><head></head><body>Please review the Expansions.txt file in the resources folder or check https://shadowverse-portal.com/api/v1/cards?format=json&lang=en to see if it is up.</body></html>");
         }
     }
 
@@ -137,13 +139,13 @@ public class Welcome extends HttpServlet {
 
 
 
-        List<Owned_Cards> imported_owned_cards;
+        List<Owned_Cards> imported_owned_cards = new ArrayList<>();
 
         //This try catch handles possible exceptions resulting from importing the text from the text area.
         //If any exceptions is caught, it will redirect to a page listing only the possible cause of the exception.
         try {
 
-            imported_owned_cards = Owned_Cards_Parser.importOwned_Cards_List(owned_cards_text);
+            imported_owned_cards = Owned_Cards_Parser.importOwned_Cards_List(owned_cards_text, this.servlet_list);
 
             //This group of variables is for the inner try catch that handles the possible exceptions
             //resulting from the card count parameters
@@ -449,5 +451,7 @@ public class Welcome extends HttpServlet {
         pw.println("</body>");
         pw.println("</html>");
 
+        //update servlet list to new owned cards list with new count
+        this.servlet_list = imported_owned_cards;
     }
 }
