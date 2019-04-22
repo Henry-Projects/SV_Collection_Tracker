@@ -7,7 +7,7 @@ However, the algorithm for which pack is best is different as shown below in a s
 
 
 Installation (Work in progress for easier deployment): You can install it by setting up a tomcat server from Apache and a Java Runtime environment from Oracle.
-Compile the source code or copy and paste the .war file (located in the target folder from this repo) into the webapps folder of the tomcat directory.
+Compile the source code (including the resources folder) as .war file and place into the webapps folder of the tomcat directory.
 Then enter http://localhost:8080/SV_Collection_Tracker/Welcome into your web browser.
 
 
