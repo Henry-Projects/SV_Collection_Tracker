@@ -1,6 +1,6 @@
-This is a small web based application for Shadowverse players using Java servlets.
+This is a small web based application for SV players using Java servlets.
 It tracks a user's collection of cards and displays which pack is best to open in order to maximize the collection.
-It uses the Shadowverse-portal API to retrieve a list of all available cards.
+It uses the SV-portal API to retrieve a list of all available cards.
 The card collection still has to be manually entered into the web app.
 The web app can updated each expansion by adding its ID number from the API into the Expansion.txt file in the resources folder.
 
