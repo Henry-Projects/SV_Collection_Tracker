@@ -11,6 +11,7 @@ However, the algorithm for which pack is best is different as shown below in a s
 
 
 Installation (Work in progress for easier deployment): You can install it by setting up a tomcat server from Apache and a Java Runtime environment from Oracle.
+Dependencies: Google's gson for parsing.
 Compile the source code (including the resources folder) as .war file and place into the webapps folder of the tomcat directory.
 Then enter http://localhost:8080/SV_Collection_Tracker/Welcome into your web browser.
 
